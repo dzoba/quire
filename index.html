@@ -1,0 +1,343 @@
+<!doctype html>
+<!-- Quire family homepage. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics.
+     Screenshots in img/ are resized copies of each product's own captures; brand rasters come from tools/build-assets.mjs. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quire – Focused, private readers for Chrome</title>
+<meta name="description" content="Quire is a family of Chrome extensions for reading EPUB books, PDFs and Markdown. Each works on your computer: no accounts, no tracking, no uploads.">
+<link rel="canonical" href="https://dzoba.github.io/quire/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="Quire – Focused, private readers for Chrome">
+<meta property="og:description" content="EPUB books, PDFs and Markdown, read in Chrome. No accounts, no tracking, no uploads.">
+<meta property="og:url" content="https://dzoba.github.io/quire/">
+<meta property="og:image" content="https://dzoba.github.io/quire/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quire – Focused, private readers for Chrome">
+<meta name="twitter:description" content="EPUB books, PDFs and Markdown, read in Chrome. No accounts, no tracking, no uploads.">
+<meta name="twitter:image" content="https://dzoba.github.io/quire/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://dzoba.github.io/quire/#site",
+      "name": "Quire",
+      "url": "https://dzoba.github.io/quire/",
+      "description": "Focused, private readers for Chrome."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Quire – EPUB Reader",
+      "applicationCategory": "BrowserApplication",
+      "applicationSubCategory": "Chrome extension",
+      "operatingSystem": "Chrome",
+      "softwareVersion": "1.0.0",
+      "description": "Open .epub links right in Chrome. Search the whole book, bookmarks that stick, page or scroll mode. Private: no tracking.",
+      "url": "https://dzoba.github.io/quire-epub-reader/",
+      "downloadUrl": "https://chromewebstore.google.com/detail/hmmmkjpnabogmjppmiijimllmkpghkkf",
+      "image": "https://dzoba.github.io/quire/img/logo-epub.png",
+      "screenshot": "https://dzoba.github.io/quire/img/epub-reading.jpg",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Quire PDF – Reader & Editor",
+      "applicationCategory": "BrowserApplication",
+      "applicationSubCategory": "Chrome extension",
+      "operatingSystem": "Chrome",
+      "description": "Read, annotate, fill forms and organize PDFs in Chrome. Save edited copies, with local recovery and no account.",
+      "url": "https://dzoba.github.io/quire-pdf/",
+      "downloadUrl": "https://chromewebstore.google.com/detail/iofhhdjmlnhmdmnoipmbkloakhakimbk",
+      "image": "https://dzoba.github.io/quire/img/logo-pdf.png",
+      "screenshot": "https://dzoba.github.io/quire/img/pdf-editor.jpg",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Quire Markdown – Viewer",
+      "applicationCategory": "BrowserApplication",
+      "applicationSubCategory": "Chrome extension",
+      "operatingSystem": "Chrome",
+      "softwareVersion": "1.0.0",
+      "description": "Read Markdown with a clean outline, highlighted code, source view and local file refresh. Private by default, no account needed.",
+      "url": "https://dzoba.github.io/quire-markdown/",
+      "image": "https://dzoba.github.io/quire/img/logo-markdown.png",
+      "screenshot": "https://dzoba.github.io/quire/img/md-reader.jpg",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="./" aria-label="Quire home"><img src="img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="#readers">Readers</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#faq" class="hide-sm">FAQ</a>
+  </nav>
+</div></header>
+
+<main id="main">
+<section class="wrap hero">
+  <div>
+    <p class="eyebrow">Three small extensions</p>
+    <h1>Focused, private readers <em>for Chrome.</em></h1>
+    <p class="lede">Quire opens books, PDFs and Markdown in a calm reading space inside your browser.
+      Pick the one you need. Each one works on your computer and keeps your documents there.</p>
+    <ul class="promises" aria-label="Shared by every Quire reader">
+      <li>No accounts</li><li>No tracking</li><li>No uploads</li><li>Free</li>
+    </ul>
+    <div class="jump">
+      <a href="#epub"><img src="img/logo-epub.png" alt="" width="28" height="28">EPUB Reader</a>
+      <a href="#pdf"><img src="img/logo-pdf.png" alt="" width="28" height="28">PDF</a>
+      <a href="#markdown"><img src="img/logo-markdown.png" alt="" width="28" height="28">Markdown</a>
+    </div>
+  </div>
+  <div class="stack">
+    <picture><source srcset="img/epub-reading.webp" type="image/webp"><img src="img/epub-reading.jpg" width="960" height="600" alt="Quire EPUB Reader showing Pride and Prejudice as a two-page spread"></picture>
+    <picture><source srcset="img/pdf-editor.webp" type="image/webp"><img src="img/pdf-editor.jpg" width="960" height="540" alt="Quire PDF with a document open and the annotation toolbar: Note, Sign, Highlight, Text, Draw, Image"></picture>
+    <picture><source srcset="img/md-reader.webp" type="image/webp"><img src="img/md-reader.jpg" width="960" height="540" alt="Quire Markdown showing a rendered document with a heading outline on the left"></picture>
+  </div>
+</section>
+
+<section class="section" id="readers">
+<div class="wrap">
+  <div class="section-head">
+    <p class="eyebrow">The family</p>
+    <h2>One job each, done carefully.</h2>
+    <p>Quire is three separate extensions rather than one that does everything. Install only what you read,
+      and each asks Chrome only for the access its own job needs.</p>
+  </div>
+
+  <div class="products">
+
+    <article class="product" id="epub" data-p="epub">
+      <div>
+        <div class="product-head">
+          <img src="img/logo-epub.png" alt="Quire EPUB Reader logo" width="60" height="60">
+          <div><h3>Quire – EPUB Reader</h3><span class="status">On the Chrome Web Store</span></div>
+        </div>
+        <p class="tagline">Click a link to an .epub file and it opens right in Chrome, in a clean reader.</p>
+        <ul class="features">
+          <li>Search every chapter at once, with matches highlighted</li>
+          <li>Bookmarks and your reading position stay put after you close the tab</li>
+          <li>Page or scroll mode; light, sepia and dark themes</li>
+          <li>A library of your books with covers and progress</li>
+          <li>Read aloud, with the current paragraph highlighted</li>
+        </ul>
+        <div class="limits">
+          <p><strong>Good to know:</strong> read aloud uses the voices installed on your computer. Scripts inside EPUB files are blocked. Works with EPUB 2 and EPUB 3.</p>
+          <p>To open book links on any site, it asks Chrome for access to all websites. <a href="https://dzoba.github.io/quire-epub-reader/#permissions">Why it needs that</a>.</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://chromewebstore.google.com/detail/hmmmkjpnabogmjppmiijimllmkpghkkf">Add to Chrome – free</a>
+          <a class="link" href="https://dzoba.github.io/quire-epub-reader/">Website</a>
+          <a class="link" href="https://dzoba.github.io/quire-epub-reader/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <figure class="shots">
+        <picture><source srcset="img/epub-reading.webp" type="image/webp"><img src="img/epub-reading.jpg" width="960" height="600" loading="lazy" alt="Pride and Prejudice open in Quire EPUB Reader as a two-page spread"></picture>
+        <picture class="second"><source srcset="img/epub-search.webp" type="image/webp"><img src="img/epub-search.jpg" width="960" height="600" loading="lazy" alt="Searching Moby-Dick for “white whale”, with results grouped by chapter"></picture>
+        <figcaption>Pride and Prejudice as a spread; whole-book search in Moby-Dick. Books shown are public-domain texts.</figcaption>
+      </figure>
+    </article>
+
+    <article class="product" id="pdf" data-p="pdf">
+      <div>
+        <div class="product-head">
+          <img src="img/logo-pdf.png" alt="Quire PDF logo" width="60" height="60">
+          <div><h3>Quire PDF – Reader &amp; Editor</h3><span class="status">On the Chrome Web Store</span></div>
+        </div>
+        <p class="tagline">Read, annotate, fill forms and organize PDFs, then save an edited copy on your computer.</p>
+        <ul class="features">
+          <li>Text search, page thumbnails and the document outline</li>
+          <li>Highlights, comments, text, drawings, images and a drawn or typed signature</li>
+          <li>Fill the standard form fields already in a PDF</li>
+          <li>Reorder or remove pages, combine PDFs, export selected pages</li>
+          <li>A local library, with recovery for unfinished work</li>
+        </ul>
+        <div class="limits">
+          <p><strong>Good to know:</strong> Quire PDF adds to a page; it does not rewrite the original text. It has no OCR, no secure redaction and no certificate-based signing, and a signature is a visual mark. XFA forms and PDF scripts are not supported.</p>
+          <p>Browser storage is not a backup, so download a copy of important work.</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://chromewebstore.google.com/detail/iofhhdjmlnhmdmnoipmbkloakhakimbk">Add to Chrome – free</a>
+          <a class="link" href="https://dzoba.github.io/quire-pdf/">Website</a>
+          <a class="link" href="https://dzoba.github.io/quire-pdf/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <figure class="shots">
+        <picture><source srcset="img/pdf-editor.webp" type="image/webp"><img src="img/pdf-editor.jpg" width="960" height="540" loading="lazy" alt="Quire PDF with the welcome document open and the annotation toolbar"></picture>
+        <picture class="second"><source srcset="img/pdf-forms.webp" type="image/webp"><img src="img/pdf-forms.jpg" width="960" height="540" loading="lazy" alt="A PDF form in Quire PDF with name, email, notes and a checkbox filled in"></picture>
+        <figcaption>The editor toolbar, and a form filled in and saved.</figcaption>
+      </figure>
+    </article>
+
+    <article class="product" id="markdown" data-p="md">
+      <div>
+        <div class="product-head">
+          <img src="img/logo-markdown.png" alt="Quire Markdown logo" width="60" height="60">
+          <div><h3>Quire Markdown – Viewer</h3><span class="status review">In review – coming soon</span></div>
+        </div>
+        <p class="tagline">A focused viewer for README files, technical notes and coding-agent plans.</p>
+        <ul class="features">
+          <li>Heading outline, find, and rendered, source or split views</li>
+          <li>Tables, task lists and syntax-highlighted code with a copy button</li>
+          <li>Refresh or follow a local file while your editor changes it</li>
+          <li>Print or download an HTML copy</li>
+          <li>Light, dark or system theme</li>
+        </ul>
+        <div class="limits">
+          <p><strong>Good to know:</strong> it is a viewer, not an editor, and never overwrites your file. It opens UTF-8 text up to 2 MB. Images appear as blocked references, and diagrams and math are not rendered.</p>
+        </div>
+        <!-- When the store listing is public, replace the span below with:
+             <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+             and update the status line above and the FAQ entry. -->
+        <div class="actions">
+          <span class="btn pending">In Chrome Web Store review</span>
+          <a class="link" href="https://dzoba.github.io/quire-markdown/">Website</a>
+          <a class="link" href="https://dzoba.github.io/quire-markdown/privacy.html">Privacy</a>
+        </div>
+      </div>
+      <figure class="shots">
+        <picture><source srcset="img/md-reader.webp" type="image/webp"><img src="img/md-reader.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown showing its field guide with an outline of headings"></picture>
+        <picture class="second"><source srcset="img/md-split.webp" type="image/webp"><img src="img/md-split.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown in the dark theme with rendered page and Markdown source side by side"></picture>
+        <figcaption>The built-in field guide, and split view in the dark theme.</figcaption>
+      </figure>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<section class="section" id="privacy">
+<div class="wrap">
+  <div class="section-head">
+    <p class="eyebrow">Private by design</p>
+    <h2>Your documents stay on your computer.</h2>
+    <p>Every Quire reader is local-first. None of them sends the documents you open to the developer or to anyone else.</p>
+  </div>
+  <div class="principles">
+    <div class="principle"><h3>No accounts</h3><p>Nothing to sign up for or log in to. Install it and open a file.</p></div>
+    <div class="principle"><h3>No tracking</h3><p>No analytics, advertising or tracking code in any of the three.</p></div>
+    <div class="principle"><h3>No uploads</h3><p>Documents are opened and processed in your browser. Nothing you open is sent to the developer.</p></div>
+    <div class="principle"><h3>Stored locally</h3><p>Libraries, bookmarks, recent files and settings live in your Chrome profile, not in a cloud.</p></div>
+  </div>
+
+  <h3 class="perm-title">Different jobs, different permissions</h3>
+  <p class="perm-intro">Each extension asks Chrome for different access. Here is the short version; each product's own page explains every permission in full.</p>
+  <div class="perms">
+    <div class="perm" style="--c:var(--epub)">
+      <h4><img src="img/logo-epub.png" alt="" width="28" height="28">EPUB Reader</h4>
+      <p>Asks for access to all websites so a click on any .epub link opens in the reader, and the book can be fetched from the site that hosts it. It has no content scripts and does not read or change the pages you visit. Opening books forced to download is optional and asked separately.</p>
+      <a href="https://dzoba.github.io/quire-epub-reader/#permissions">EPUB permissions explained</a>
+    </div>
+    <div class="perm" style="--c:var(--pdf)">
+      <h4><img src="img/logo-pdf.png" alt="" width="28" height="28">PDF</h4>
+      <p>Uses <code>activeTab</code> and <code>contextMenus</code>. When you open a PDF from a link, it asks for access to that one website at that moment. Local files need no site access.</p>
+      <a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF privacy and permissions</a>
+    </div>
+    <div class="perm" style="--c:var(--md)">
+      <h4><img src="img/logo-markdown.png" alt="" width="28" height="28">Markdown</h4>
+      <p>Uses <code>activeTab</code> and <code>contextMenus</code>. Opening a raw Markdown link asks for access to that one website and fetches the file without cookies. Local files need no site access.</p>
+      <a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown privacy and permissions</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="faq">
+<div class="wrap faq">
+  <div class="section-head">
+    <p class="eyebrow">Questions</p>
+    <h2>Good to know.</h2>
+    <p>Anything else? Each product has its own issue tracker, linked at the bottom of the page.</p>
+  </div>
+  <div>
+    <details open>
+      <summary>Do I need an account?</summary>
+      <p>No. None of the Quire readers has accounts or sign-in. Install one from the Chrome Web Store and open a file.</p>
+    </details>
+    <details>
+      <summary>Are my documents uploaded anywhere?</summary>
+      <p>No. Files are opened and processed in your browser, and anything kept for later, such as a library, recovery copy or recent document, is stored in your Chrome profile. When you open a document from a web link, the request goes to the site that hosts it, the same as downloading it.</p>
+    </details>
+    <details>
+      <summary>Why are these three extensions and not one?</summary>
+      <p>Each job needs different access. Opening every .epub link on the web needs broad site access, while the PDF and Markdown readers only ask for a website when you open something from it. Keeping them separate means you only grant what the reader you use actually needs.</p>
+    </details>
+    <details>
+      <summary>Can Quire PDF edit the text in a PDF?</summary>
+      <p>Not the original text. It adds highlights, notes, text, drawings, images and signature marks, fills existing form fields, and rearranges pages. It does not do OCR, secure redaction or certificate-based digital signing.</p>
+    </details>
+    <details>
+      <summary>When can I install Quire Markdown?</summary>
+      <p>It has been submitted and is waiting for Chrome Web Store review. An install button will appear here once it is approved. Until then, <a href="https://dzoba.github.io/quire-markdown/">its website</a> describes what it does.</p>
+    </details>
+    <details>
+      <summary>What does it cost?</summary>
+      <p>All three are free, with no ads. Quire EPUB Reader and Quire PDF are on the Chrome Web Store now; Quire Markdown can be installed once its review finishes.</p>
+    </details>
+    <details>
+      <summary>Does browser storage replace a backup?</summary>
+      <p>No. Uninstalling an extension or clearing browser data can remove what it stored. Keep your original files, and download copies of edited PDFs you care about.</p>
+    </details>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="./"><img src="img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>
