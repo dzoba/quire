@@ -1,0 +1,6 @@
+# Note: this file is served at https://dzoba.github.io/quire/robots.txt. Crawlers only read robots.txt
+# at the origin root (https://dzoba.github.io/robots.txt), so submit the sitemap in Search Console.
+User-agent: *
+Allow: /
+
+Sitemap: https://dzoba.github.io/quire/sitemap.xml

@@ -137,7 +137,7 @@ p{margin:0 0 1em}
 
 /* Footer */
 .foot{border-top:1px solid var(--line);padding:44px 0 56px;font-size:15px;color:var(--muted)}
-.foot .wrap{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:32px}
+.foot .wrap{display:grid;grid-template-columns:1.3fr repeat(4,1fr);gap:32px}
 .foot h4{font:650 14px/1.3 var(--sans);color:var(--ink);margin:0 0 12px}
 .foot ul{list-style:none;margin:0;padding:0}
 .foot li{margin-bottom:8px}
@@ -160,6 +160,44 @@ p{margin:0 0 1em}
 .policy-list b{display:block}
 .policy-list a{font-weight:600}
 .policy-list span{font-size:15px;color:var(--muted)}
+
+/* Guides */
+.crumbs{font-size:14px;color:var(--muted);margin:0 0 18px}
+.crumbs a{color:var(--muted)}
+.crumbs a:hover{color:var(--ink)}
+.guide h1{margin-bottom:20px}
+.guide h3{font-size:21px;margin:28px 0 10px}
+.answer{background:var(--shell);border-radius:12px;padding:18px 20px;margin:0 0 12px;font-size:18px}
+.legal .answer p{color:var(--ink);margin:0 0 8px}
+.legal .answer p:last-child{margin:0}
+.updated{font-size:14px}
+.steps{list-style:none;counter-reset:step;padding:0;margin:0 0 8px}
+.legal .steps>li{counter-increment:step;position:relative;padding:0 0 0 46px;margin:0 0 16px;color:var(--ink)}
+.steps>li::before{content:counter(step);position:absolute;left:0;top:-1px;width:30px;height:30px;border-radius:50%;background:var(--sheet);border:1px solid var(--line);display:grid;place-items:center;font:650 14px/1 var(--sans);color:var(--accent)}
+.steps>li p{margin:4px 0 0}
+.legal kbd{font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--sheet);border:1px solid var(--line);border-bottom-width:2px;padding:0 5px;border-radius:4px;color:var(--ink);white-space:nowrap}
+.legal code{font:14px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--shell);padding:1px 5px;border-radius:4px;color:var(--ink);overflow-wrap:anywhere}
+.shot{margin:26px 0 30px}
+.shot picture{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.callout{display:flex;gap:16px;align-items:flex-start;background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:20px;margin:24px 0}
+.callout>img{width:48px;height:48px;flex:none}
+.callout b{display:block;font-size:18px}
+.legal .callout p{margin:6px 0 14px;font-size:15px}
+.callout .status{margin:2px 0 0}
+.callout .btn{min-height:42px;font-size:15px}
+.faq-list details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq-list summary{cursor:pointer;font-weight:650;color:var(--ink)}
+.faq-list details p{margin:10px 0 0}
+.related{padding-left:20px}
+.related li{margin-bottom:8px}
+.related a{font-weight:600;color:var(--ink)}
+.guide-list{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:14px}
+.legal .guide-list li{display:flex;gap:16px;align-items:flex-start;background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:var(--ink)}
+.guide-list img{width:40px;height:40px;flex:none}
+.guide-list a{font:600 20px/1.25 var(--serif);text-decoration:none}
+.guide-list a:hover{text-decoration:underline}
+.legal .guide-list span{display:block;font-size:15px;color:var(--muted);margin-top:4px}
 
 @media (max-width:980px){
   .hero{grid-template-columns:1fr;gap:44px;padding-top:56px}
@@ -190,6 +228,10 @@ p{margin:0 0 1em}
   .shots figcaption{grid-column:1;padding-right:0}
   .principles{grid-template-columns:1fr}
   .btn{width:100%}
+  .callout{flex-direction:column;gap:12px;padding:18px}
+  .callout>img{width:40px;height:40px}
+  .legal .guide-list li{padding:16px}
+  .guide-list img{width:32px;height:32px}
   .foot .wrap{grid-template-columns:1fr}
 }
 @media (prefers-color-scheme:dark){

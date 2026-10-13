@@ -1,0 +1,227 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to view Markdown (.md) files in Chrome – Quire</title>
+<meta name="description" content="Chrome shows .md files as plain text. How to see Markdown formatted: GitHub, VS Code&#x27;s built-in preview, or a viewer extension like Quire Markdown (in review).">
+<link rel="canonical" href="https://dzoba.github.io/quire/guides/view-markdown-in-chrome.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="How to view Markdown (.md) files in Chrome – Quire">
+<meta property="og:description" content="Chrome shows .md files as plain text. Ways to view Markdown formatted, with and without an extension.">
+<meta property="og:url" content="https://dzoba.github.io/quire/guides/view-markdown-in-chrome.html">
+<meta property="og:image" content="https://dzoba.github.io/quire/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to view Markdown (.md) files in Chrome – Quire">
+<meta name="twitter:description" content="Chrome shows .md files as plain text. Ways to view Markdown formatted, with and without an extension.">
+<meta name="twitter:image" content="https://dzoba.github.io/quire/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://dzoba.github.io/quire/guides/view-markdown-in-chrome.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can Chrome display Markdown files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chrome opens .md files as plain text. You see the Markdown source, with # for headings and * for lists, rather than formatted text. That is readable for short notes but not for long documents with tables or code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I see formatted Markdown without installing anything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the file is in a GitHub repository, open it on github.com, which shows it formatted. If you have VS Code, open the file and press Ctrl+Shift+V (Shift+Command+V on a Mac) for its built-in preview."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I install Quire Markdown now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. Quire Markdown has been submitted to the Chrome Web Store and is waiting for review. The Quire homepage will link to it once it is approved."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://dzoba.github.io/quire/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://dzoba.github.io/quire/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "View Markdown files in Chrome",
+          "item": "https://dzoba.github.io/quire/guides/view-markdown-in-chrome.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">View Markdown files in Chrome</span></nav>
+  <h1>How to view Markdown (.md) files in Chrome</h1>
+  <div class="answer">
+    <p><strong>Short answer:</strong> Chrome shows a Markdown file as plain text. Drag a .md file into Chrome, or open a raw .md link, and you get the source with its <code>#</code> and <code>*</code> characters, not formatted headings and lists.</p>
+    <p>To see it formatted without installing anything, use GitHub (for files in a repository) or the preview built into VS Code. A Markdown viewer extension shows it formatted right in Chrome.</p>
+  </div>
+  <p class="updated">Updated 12 October 2026. Plain-text behaviour checked in Chrome 155 on a Mac.</p>
+
+  <h2>Options that need no extension</h2>
+  <ol class="steps">
+    <li id="plain"><strong>Read the plain text in Chrome</strong><p>Drag the .md file into a Chrome window, or press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>⌘</kbd>+<kbd>O</kbd> on a Mac) and choose it. Markdown is designed to be readable as plain text, so this is fine for a short README.</p></li>
+    <li id="github"><strong>View it on GitHub</strong><p>If the file is in a GitHub repository, open it on github.com. GitHub shows Markdown files formatted, and you can switch to the source with the <strong>Code</strong> button above the file.</p></li>
+    <li id="vscode"><strong>Preview it in VS Code</strong><p>VS Code supports Markdown out of the box. Open the file and press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd> on a Mac) for a preview, or <kbd>Ctrl</kbd>+<kbd>K</kbd> then <kbd>V</kbd> (<kbd>⌘</kbd><kbd>K</kbd> <kbd>V</kbd>) to see it side by side with the source. Most code editors have something similar.</p></li>
+  </ol>
+
+  <h2>View Markdown formatted in Chrome with Quire Markdown</h2>
+  <p><strong>Quire Markdown is in Chrome Web Store review and can’t be installed yet.</strong> It is our extension; here is what it does, so you can decide whether to come back for it.</p>
+  <ul>
+    <li>Open a local file, drop one on the viewer, or paste Markdown. Your original file is never changed.</li>
+    <li>A heading outline for jumping around, find, and rendered, source or split views.</li>
+    <li>Tables, task lists and syntax-highlighted code with a copy button.</li>
+    <li>Refresh, or follow a file while your editor or coding agent changes it.</li>
+    <li>Print, or download an HTML copy.</li>
+  </ul>
+
+<figure class="shot">
+  <picture><source srcset="../img/md-reader.webp" type="image/webp"><img src="../img/md-reader.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown showing a rendered document with a heading outline on the left"></picture>
+  <figcaption>Quire Markdown with its outline of headings.</figcaption>
+</figure>
+
+<figure class="shot">
+  <picture><source srcset="../img/md-split.webp" type="image/webp"><img src="../img/md-split.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown in the dark theme with the rendered page and Markdown source side by side"></picture>
+  <figcaption>Split view in the dark theme: the rendered page beside the Markdown source.</figcaption>
+</figure>
+
+  <h3>Its limits</h3>
+  <ul>
+    <li>It is a viewer, not an editor.</li>
+    <li>It opens UTF-8 text files up to 2 MB.</li>
+    <li>Images in a document appear as blocked references rather than pictures, and diagrams and math aren’t rendered.</li>
+    <li>Opening a raw Markdown link asks for access to that one website. Files behind a sign-in or a redirect need to be downloaded and opened locally.</li>
+  </ul>
+
+<aside class="callout" aria-label="Quire Markdown">
+  <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
+  <div>
+    <b>Quire Markdown – Viewer</b><span class="status review">In review – coming soon</span>
+    <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. It is waiting for Chrome Web Store review and cannot be installed yet.</p>
+    <div class="actions">
+      <span class="btn pending">In Chrome Web Store review</span>
+      <a class="link" href="../#markdown">Details and limits</a>
+    </div>
+  </div>
+</aside>
+
+  <h2>Other good options</h2>
+  <ul>
+    <li><strong>Your code editor’s preview</strong>, as above. Good when you are editing the file anyway.</li>
+    <li><strong>GitHub</strong>, for anything already in a repository.</li>
+    <li><strong>Other Markdown extensions</strong> are available on the Chrome Web Store today. Before installing one, check what site access it asks for.</li>
+  </ul>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Can Chrome display Markdown files?</summary><p>Chrome opens .md files as plain text. You see the Markdown source, with # for headings and * for lists, rather than formatted text. That is readable for short notes but not for long documents with tables or code.</p></details>
+    <details><summary>How can I see formatted Markdown without installing anything?</summary><p>If the file is in a GitHub repository, open it on github.com, which shows it formatted. If you have VS Code, open the file and press Ctrl+Shift+V (Shift+Command+V on a Mac) for its built-in preview.</p></details>
+    <details><summary>Can I install Quire Markdown now?</summary><p>Not yet. Quire Markdown has been submitted to the Chrome Web Store and is waiting for review. The Quire homepage will link to it once it is approved.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="open-epub-in-chrome.html">How to open EPUB files in Chrome</a></li>
+    <li><a href="open-epub-on-chromebook.html">How to open EPUB books on a Chromebook</a></li>
+    <li><a href="fill-pdf-form-in-chrome.html">How to fill a PDF form in Chrome without Adobe</a></li>
+    <li><a href="annotate-pdf-in-chrome.html">How to highlight, annotate and sign a PDF in Chrome</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>
