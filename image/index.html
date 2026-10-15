@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; connect-src 'self'; img-src 'self' blob: data:; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Image tools that run in your browser | Quire</title>
-<meta name="description" content="Free image tools from Quire: convert HEIC photos to JPG and compress JPG, PNG and WebP images. Everything runs in your browser and nothing is uploaded.">
+<meta name="description" content="Free image tools from Quire: convert HEIC, PNG, JPG and WebP, compress and resize images, and remove EXIF data. Everything runs in your browser and nothing is uploaded.">
 <link rel="canonical" href="https://quireapps.com/image/">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Quire">
 <meta property="og:title" content="Image tools that run in your browser">
-<meta property="og:description" content="Free image tools from Quire: convert HEIC photos to JPG and compress JPG, PNG and WebP images. Everything runs in your browser and nothing is uploaded.">
+<meta property="og:description" content="Free image tools from Quire: convert HEIC, PNG, JPG and WebP, compress and resize images, and remove EXIF data. Everything runs in your browser and nothing is uploaded.">
 <meta property="og:url" content="https://quireapps.com/image/">
 <meta property="og:image" content="https://quireapps.com/image/assets/og-heic-to-jpg.png">
 <meta property="og:image:type" content="image/png">
@@ -24,7 +24,7 @@
 <meta property="og:image:alt" content="The Quire HEIC to JPG converter with a list of converted photos">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Image tools that run in your browser">
-<meta name="twitter:description" content="Free image tools from Quire: convert HEIC photos to JPG and compress JPG, PNG and WebP images. Everything runs in your browser and nothing is uploaded.">
+<meta name="twitter:description" content="Free image tools from Quire: convert HEIC, PNG, JPG and WebP, compress and resize images, and remove EXIF data. Everything runs in your browser and nothing is uploaded.">
 <meta name="twitter:image" content="https://quireapps.com/image/assets/og-heic-to-jpg.png">
 <meta name="twitter:image:alt" content="The Quire HEIC to JPG converter with a list of converted photos">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -38,7 +38,7 @@
   "@type": "CollectionPage",
   "name": "Quire image tools",
   "url": "https://quireapps.com/image/",
-  "description": "Free image tools from Quire: convert HEIC photos to JPG and compress JPG, PNG and WebP images. Everything runs in your browser and nothing is uploaded.",
+  "description": "Free image tools from Quire: convert HEIC, PNG, JPG and WebP, compress and resize images, and remove EXIF data. Everything runs in your browser and nothing is uploaded.",
   "hasPart": [
     {
       "@type": "WebApplication",
@@ -63,6 +63,90 @@
         "price": "0",
         "priceCurrency": "USD"
       }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Quire image resizer",
+      "url": "https://quireapps.com/image/resize-image/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (runs in a web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Quire EXIF remover",
+      "url": "https://quireapps.com/image/remove-exif/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (runs in a web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Quire PNG to JPG converter",
+      "url": "https://quireapps.com/image/png-to-jpg/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (runs in a web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Quire JPG to PNG converter",
+      "url": "https://quireapps.com/image/jpg-to-png/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (runs in a web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Quire WebP to JPG converter",
+      "url": "https://quireapps.com/image/webp-to-jpg/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (runs in a web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Quire WebP to PNG converter",
+      "url": "https://quireapps.com/image/webp-to-png/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (runs in a web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Quire JPG to WebP converter",
+      "url": "https://quireapps.com/image/jpg-to-webp/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any (runs in a web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     }
   ]
 }
@@ -72,11 +156,14 @@
 <a class="skip" href="#main">Skip to the content</a>
 <header class="top"><div class="wrap">
   <a class="brand" href="../" aria-label="Quire home"><img src="assets/img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
-  <nav class="nav" aria-label="Tools">
+  <nav class="nav" aria-label="Image tools">
     <a href="heic-to-jpg/">HEIC to JPG</a>
     <a href="compress-image/">Compress images</a>
+    <a href="resize-image/">Resize images</a>
+    <a href="remove-exif/">Remove EXIF</a>
+    <a href="./#convert">Convert formats</a>
+    <a aria-current="page" class="hide-sm">All image tools</a>
     <a href="../pdf/" class="hide-sm">PDF tools</a>
-    <a href="../guides/" class="hide-sm">Guides</a>
   </nav>
 </div></header>
 
@@ -86,9 +173,25 @@
   <h1>Image tools that run in your browser</h1>
   <p class="lede">These tools work on your device. Your photos never leave your browser, and there is no account and no tracking.</p>
 </section>
-<section class="wrap img-cards">
-  <a class="img-card" href="heic-to-jpg/"><h2>Convert HEIC to JPG in your browser</h2><p>iPhones save photos as HEIC files, which many apps and websites cannot open. This converter turns them into JPG or PNG files. Your photos never leave your browser: the decoder runs on your device and nothing is uploaded.</p></a>
-  <a class="img-card" href="compress-image/"><h2>Compress JPG, PNG and WebP images in your browser</h2><p>This tool makes JPG, PNG and WebP files smaller. You can change the format, set the quality and shrink large images to a maximum width or height. It shows the size before and after for each file.</p></a>
+<section class="wrap img-group" aria-labelledby="tools-title">
+  <h2 id="tools-title" class="sr-only">Tools</h2>
+  <div class="img-cards">
+  <a class="img-card" href="heic-to-jpg/"><h3>Convert HEIC to JPG in your browser</h3><p>iPhones save photos as HEIC files, which many apps and websites cannot open. This converter turns them into JPG or PNG files. Your photos never leave your browser: the decoder runs on your device and nothing is uploaded.</p></a>
+  <a class="img-card" href="compress-image/"><h3>Compress JPG, PNG and WebP images in your browser</h3><p>This tool makes JPG, PNG and WebP files smaller. You can change the format, set the quality and shrink large images to a maximum width or height. It shows the size before and after for each file.</p></a>
+  <a class="img-card" href="resize-image/"><h3>Resize images in your browser</h3><p>Set a width, a height or a percentage, and this tool resizes your JPG, PNG and WebP images to exactly that size. It keeps the aspect ratio unless you turn that off, and it can resize a whole folder of images in one go.</p></a>
+  <a class="img-card" href="remove-exif/"><h3>Remove EXIF data and GPS location from photos</h3><p>Photos from phones and cameras usually record where and when they were taken and which device took them. This tool shows what each JPG, PNG or WebP file contains, then removes it.</p></a>
+  </div>
+</section>
+<section class="wrap img-group" id="convert" aria-labelledby="convert-title">
+  <h2 id="convert-title">Convert formats</h2>
+  <p class="img-group-lede">Each converter runs in your browser like the tools above. HEIC photos go through the <a href="heic-to-jpg/">HEIC converter</a>, which makes JPG or PNG files.</p>
+  <div class="img-cards img-cards-sm">
+  <a class="img-card" href="png-to-jpg/"><h3>PNG to JPG</h3><p>Convert PNG images to JPG in your browser.</p></a>
+  <a class="img-card" href="jpg-to-png/"><h3>JPG to PNG</h3><p>Convert JPG images to PNG in your browser, with lossless OxiPNG optimization.</p></a>
+  <a class="img-card" href="webp-to-jpg/"><h3>WebP to JPG</h3><p>Convert WebP images to JPG in your browser, with a background color for transparent areas (white by default).</p></a>
+  <a class="img-card" href="webp-to-png/"><h3>WebP to PNG</h3><p>Convert WebP images to PNG in your browser.</p></a>
+  <a class="img-card" href="jpg-to-webp/"><h3>JPG to WebP</h3><p>Convert JPG images to WebP in your browser, with a quality setting and the size before and after.</p></a>
+  </div>
 </section>
 </main>
 
@@ -99,9 +202,19 @@
     <small>The image tools use libheif (LGPL-3.0), MozJPEG and OxiPNG. <a href="THIRD-PARTY.html">Third-party notices and source code</a>.</small>
   </div>
   <div><h4>Image tools</h4><ul>
-    <li><a href="">All image tools</a></li>
+    <li><a href="./">All image tools</a></li>
     <li><a href="heic-to-jpg/">HEIC to JPG</a></li>
     <li><a href="compress-image/">Compress images</a></li>
+    <li><a href="resize-image/">Resize images</a></li>
+    <li><a href="remove-exif/">Remove EXIF</a></li>
+  </ul></div>
+  <div><h4>Convert formats</h4><ul>
+    <li><a href="png-to-jpg/">PNG to JPG</a></li>
+    <li><a href="jpg-to-png/">JPG to PNG</a></li>
+    <li><a href="webp-to-jpg/">WebP to JPG</a></li>
+    <li><a href="webp-to-png/">WebP to PNG</a></li>
+    <li><a href="jpg-to-webp/">JPG to WebP</a></li>
+    <li><a href="heic-to-jpg/">HEIC to JPG or PNG</a></li>
   </ul></div>
   <div><h4>Quire</h4><ul>
     <li><a href="../">quireapps.com</a></li>

@@ -70,11 +70,14 @@
 <a class="skip" href="#main">Skip to the content</a>
 <header class="top"><div class="wrap">
   <a class="brand" href="../../" aria-label="Quire home"><img src="../assets/img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
-  <nav class="nav" aria-label="Tools">
+  <nav class="nav" aria-label="Image tools">
     <a aria-current="page">HEIC to JPG</a>
     <a href="../compress-image/">Compress images</a>
+    <a href="../resize-image/">Resize images</a>
+    <a href="../remove-exif/">Remove EXIF</a>
+    <a href="../#convert">Convert formats</a>
+    <a href="../" class="hide-sm">All image tools</a>
     <a href="../../pdf/" class="hide-sm">PDF tools</a>
-    <a href="../../guides/" class="hide-sm">Guides</a>
   </nav>
 </div></header>
 
@@ -148,11 +151,25 @@
     <details><summary>What happens to the location and other metadata?</summary><p>The default setting removes the GPS section of the photo's EXIF data and keeps the rest, such as the date taken, the camera model and the exposure settings. "Remove all metadata" writes the photo with no EXIF data at all. "Keep all metadata" copies the EXIF data as it is, including the location. Each row in the list says what happened to that photo. XMP and other metadata blocks are not copied in any mode. The color profile is always kept, because it describes the colors and holds no personal data.</p></details>
     <details><summary>What about Live Photos, bursts and files with more than one image?</summary><p>A HEIC file can hold several images. The converter uses the primary image, which is the one your phone shows, and tells you when a file held more than one. The video part of a Live Photo is stored in a separate .MOV file, so it is not in the HEIC file and is not converted. Burst photos are usually saved as one HEIC file per shot. Depth maps, thumbnails and HDR gain maps inside the file are skipped.</p></details>
     <details><summary>Will the colors look the same?</summary><p>iPhone photos use the Display P3 color space. The converter copies the photo's color profile into the JPG or PNG, so apps that read color profiles show the same colors. Apps that ignore color profiles can show them slightly duller. The output is a standard 8-bit image, so the extra brightness of an HDR photo is not kept. If a file describes its colors with a color code instead of a profile, the converter treats them as sRGB.</p></details>
+    <details><summary>Can it convert HEIC to PNG?</summary><p>Yes. Under "Convert to", choose PNG. PNG is lossless, so the file keeps every decoded pixel, and the color profile and the metadata you chose are written into it. PNG files of photos are large: usually several times the size of the JPG. Use PNG when an app needs it or when you plan to edit the photo further.</p></details>
     <details><summary>Why is the JPG larger than the HEIC file?</summary><p>HEIC compresses photos better than JPG, so a JPG of the same photo is usually larger, often about twice the size. A lower quality setting gives a smaller file. PNG files are much larger again, because PNG is lossless.</p></details>
     <details><summary>Are there limits?</summary><p>Each file can be up to 50 MB and 100 megapixels, and the list holds up to 100 files at a time. Files are converted one at a time to keep memory use down. A large photo can take a few seconds to convert, and PNG output takes longer than JPG. Phones with little memory may fail on very large files.</p></details>
     <details><summary>Which browsers does it work in?</summary><p>It is tested in Chrome. It needs WebAssembly and module workers, which current versions of Chrome, Edge, Firefox and Safari support, but Firefox and Safari have had less testing here. Safari can open HEIC files itself, but this page uses the same decoder in every browser so the results match.</p></details>
     <details><summary>Is it free?</summary><p>Yes. There is no account, no sign-up, no watermark and no daily limit.</p></details>
   </div>
+</div></section>
+<section class="section img-related" aria-labelledby="related-title"><div class="wrap">
+  <h2 id="related-title">More image tools</h2>
+  <ul>
+    <li><a href="../compress-image/">Compress JPG, PNG and WebP images</a></li>
+    <li><a href="../resize-image/">Resize images</a></li>
+    <li><a href="../remove-exif/">Remove EXIF data and GPS location from photos</a></li>
+    <li><a href="../png-to-jpg/">Convert PNG to JPG</a></li>
+    <li><a href="../jpg-to-png/">Convert JPG to PNG</a></li>
+    <li><a href="../webp-to-jpg/">Convert WebP to JPG</a></li>
+    <li><a href="../webp-to-png/">Convert WebP to PNG</a></li>
+    <li><a href="../jpg-to-webp/">Convert JPG to WebP</a></li>
+  </ul>
 </div></section>
 </main>
 
@@ -166,6 +183,16 @@
     <li><a href="../">All image tools</a></li>
     <li><a href="../heic-to-jpg/">HEIC to JPG</a></li>
     <li><a href="../compress-image/">Compress images</a></li>
+    <li><a href="../resize-image/">Resize images</a></li>
+    <li><a href="../remove-exif/">Remove EXIF</a></li>
+  </ul></div>
+  <div><h4>Convert formats</h4><ul>
+    <li><a href="../png-to-jpg/">PNG to JPG</a></li>
+    <li><a href="../jpg-to-png/">JPG to PNG</a></li>
+    <li><a href="../webp-to-jpg/">WebP to JPG</a></li>
+    <li><a href="../webp-to-png/">WebP to PNG</a></li>
+    <li><a href="../jpg-to-webp/">JPG to WebP</a></li>
+    <li><a href="../heic-to-jpg/">HEIC to JPG or PNG</a></li>
   </ul></div>
   <div><h4>Quire</h4><ul>
     <li><a href="../../">quireapps.com</a></li>

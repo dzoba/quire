@@ -188,3 +188,76 @@ export function pngChunks(png) {
   }
   return out;
 }
+
+// ---------- Summary for the remove-EXIF tool ----------
+// What a TIFF/EXIF block says about the photo: GPS position, camera, dates and a few other
+// fields that identify a person or a device. Never throws; unreadable parts are skipped.
+export function exifSummary(input) {
+  const out = {tags: 0, gps: false, gpsTags: 0, lat: null, lon: null, make: null, model: null, date: null,
+    orientation: null, other: [], thumbnail: false};
+  let t;
+  try { t = tiffView(input); } catch { return out; }
+  const {view, le} = t;
+  const valueAt = e => (e.size <= 4 ? e.at + 8 : e.value);
+  const ascii = e => {
+    if (!e || e.type !== 2) return null;
+    const at = valueAt(e);
+    if (at + e.count > view.byteLength) return null;
+    let s = '';
+    for (let i = 0; i < e.count; i++) { const c = view.getUint8(at + i); if (!c) break; s += String.fromCharCode(c); }
+    return s.trim() || null;
+  };
+  const rationals = e => {
+    if (!e || e.type !== 5 || e.value + 8 * e.count > view.byteLength) return null;
+    const r = [];
+    for (let i = 0; i < e.count; i++) { const d = view.getUint32(e.value + 8 * i + 4, le); r.push(d ? view.getUint32(e.value + 8 * i, le) / d : 0); }
+    return r;
+  };
+  const safeIfd = at => { try { return readIfd(view, le, at); } catch { return null; } };
+  const ifd0 = safeIfd(t.ifd0);
+  if (!ifd0) return out;
+  const find = (ifd, tag) => ifd?.entries.find(e => e.tag === tag);
+  out.tags = ifd0.n;
+  out.make = ascii(find(ifd0, 0x010f));
+  out.model = ascii(find(ifd0, 0x0110));
+  const o = find(ifd0, ORIENTATION);
+  if (o && o.type === 3) out.orientation = view.getUint16(o.at + 8, le);
+  const exifPtr = find(ifd0, 0x8769);
+  const exif = exifPtr ? safeIfd(exifPtr.value) : null;
+  if (exif) out.tags += exif.n;
+  out.date = ascii(find(exif, 0x9003)) || ascii(find(exif, 0x9004)) || ascii(find(ifd0, 0x0132));
+  const named = [[ifd0, 0x013b, 'artist'], [ifd0, 0x8298, 'copyright'], [ifd0, 0x0131, 'software'],
+    [exif, 0xa430, 'owner name'], [exif, 0xa431, 'camera serial number'], [exif, 0xa434, 'lens model'], [exif, 0xa435, 'lens serial number']];
+  for (const [ifd, tag, label] of named) if (find(ifd, tag)) out.other.push(label);
+  const g = find(ifd0, GPS_POINTER);
+  const gps = g ? safeIfd(g.value) : null;
+  if (g) out.gps = true;
+  if (gps) {
+    out.gpsTags = gps.n;
+    out.tags += gps.n;
+    const dms = r => (r && r.length >= 3 ? r[0] + r[1] / 60 + r[2] / 3600 : null);
+    const lat = dms(rationals(find(gps, 2))), lon = dms(rationals(find(gps, 4)));
+    if (lat != null && lon != null) {
+      out.lat = ascii(find(gps, 1)) === 'S' ? -lat : lat;
+      out.lon = ascii(find(gps, 3)) === 'W' ? -lon : lon;
+    }
+    if (!gps.n) out.gps = false;
+  }
+  const next = view.getUint32(ifd0.at + 2 + ifd0.n * 12, le);
+  if (next && safeIfd(next)) out.thumbnail = true;
+  return out;
+}
+
+// A TIFF block holding only an Orientation tag (big-endian), for keeping rotated photos upright.
+export function orientationOnlyExif(orientation) {
+  const t = new Uint8Array(26);
+  const v = new DataView(t.buffer);
+  t.set([0x4d, 0x4d, 0, 42, 0, 0, 0, 8]);
+  v.setUint16(8, 1);              // one entry
+  v.setUint16(10, ORIENTATION);
+  v.setUint16(12, 3);             // SHORT
+  v.setUint32(14, 1);             // count 1
+  v.setUint16(18, orientation);   // value, left-justified in the 4-byte field
+  v.setUint32(22, 0);             // no next IFD
+  return t;
+}

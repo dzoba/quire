@@ -204,7 +204,7 @@ export function createBatchTool(cfg) {
     rerun.hidden = running || !changed || !rows.some(r => r.retryable);
   }
 
-  const STAGES = {reading: 'Reading file…', decoding: 'Decoding…', encoding: 'Encoding…', optimising: 'Optimizing PNG (this can take a few seconds)…'};
+  const STAGES = {reading: 'Reading file…', decoding: 'Decoding…', encoding: 'Encoding…', optimising: 'Optimizing PNG (this can take a few seconds)…', stripping: 'Removing metadata…'};
   function render(r) {
     const li = r.li;
     li.dataset.state = r.state;
@@ -242,3 +242,10 @@ export function bindRange(range, output, fmt = v => v) {
   range.addEventListener('input', sync);
   sync();
 }
+
+// JPG/PNG/WebP helpers shared by the compressor, the resizer, the converters and remove-exif.
+export const TYPES = {'image/jpeg': 'jpeg', 'image/png': 'png', 'image/webp': 'webp'};
+export const EXT = {jpeg: '.jpg', png: '.png', webp: '.webp'};
+export const LABEL = {jpeg: 'JPG', png: 'PNG', webp: 'WebP'};
+export const typeOf = file => TYPES[file.type] || ({jpg: 'jpeg', jpeg: 'jpeg', jpe: 'jpeg', jfif: 'jpeg', png: 'png', webp: 'webp'})[file.name.split('.').pop().toLowerCase()];
+export const isHeic = file => /\.(heic|heif|hif)$/i.test(file.name) || /^image\/hei[cf]/.test(file.type);

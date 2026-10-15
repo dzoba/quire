@@ -1,5 +1,5 @@
-// Image compressor page. Decoding, resizing and encoding run in compress-worker.js.
-import {createBatchTool, formatBytes, baseName, bindRange, el, MB} from './ui.js';
+// Image compressor page. Decoding, resizing and encoding run in image-worker.js.
+import {createBatchTool, formatBytes, baseName, bindRange, el, MB, TYPES, EXT, LABEL, typeOf, isHeic} from './ui.js';
 
 const form = document.getElementById('settings');
 const quality = document.getElementById('quality');
@@ -16,15 +16,11 @@ const syncControls = () => {
 };
 syncControls();
 
-const TYPES = {'image/jpeg': 'jpeg', 'image/png': 'png', 'image/webp': 'webp'};
-const EXT = {jpeg: '.jpg', png: '.png', webp: '.webp'};
-const LABEL = {jpeg: 'JPG', png: 'PNG', webp: 'WebP'};
-const typeOf = file => TYPES[file.type] || ({jpg: 'jpeg', jpeg: 'jpeg', png: 'png', webp: 'webp'})[file.name.split('.').pop().toLowerCase()];
 const dim = input => { const n = Math.floor(+input.value); return n > 0 ? n : 0; };
 const readSettings = () => ({format: format(), quality: +quality.value, maxW: dim(maxW), maxH: dim(maxH), optimisePngOn: oxipng.checked});
 
 const tool = createBatchTool({
-  workerUrl: new URL('./compress-worker.js', import.meta.url),
+  workerUrl: new URL('./image-worker.js', import.meta.url),
   maxBytes: 50 * MB,
   maxFiles: 100,
   verb: 'Compressing',
@@ -34,7 +30,7 @@ const tool = createBatchTool({
   readSettings,
   settingsKey: () => JSON.stringify(readSettings()),
   check(file) {
-    if (/\.(heic|heif)$/i.test(file.name) || /^image\/hei[cf]/.test(file.type)) return 'This is a HEIC photo. Convert it with the HEIC to JPG converter first.';
+    if (isHeic(file)) return 'This is a HEIC photo. Convert it with the HEIC to JPG converter first.';
     return typeOf(file) ? null : 'This tool accepts JPG, PNG and WebP files.';
   },
   message(file, bytes, o) {
