@@ -1,0 +1,20 @@
+--- a/paginator.js (foliate-js 78914aef)
++++ b/paginator.js (Quire)
+@@ -284,6 +284,8 @@
+     }
+     render(layout) {
+         if (!layout) return
++        // Quire patch: the section document can be torn down while a resize is pending
++        if (!this.document?.body) return
+         this.#column = layout.flow !== 'scrolled'
+         this.#layout = layout
+         if (this.#column) this.columnize(layout)
+@@ -950,6 +952,8 @@
+             this.start - size, this.end - size, this.#getRectMapper())
+     }
+     #afterScroll(reason) {
++        // Quire patch: a debounced scroll can fire after the section is unloaded
++        if (!this.#view?.document?.body) return
+         const range = this.#getVisibleRange()
+         this.#lastVisibleRange = range
+         // don't set new anchor if relocation was to scroll to anchor

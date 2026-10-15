@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' blob: data:; img-src 'self' blob: data:; font-src 'self' blob: data:; media-src 'self' blob: data:; frame-src 'self' blob: data:; connect-src 'self' blob: data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Library · Quire EPUB Reader</title>
+<link rel="icon" href="icons/icon32.png">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="library.css">
+<script type="module" src="library.js"></script>
+</head>
+<body>
+<header class="lib-head">
+  <div class="brand"><img src="icons/icon48.png" alt=""><span>Quire</span></div>
+  <div class="spacer"></div>
+  <button class="icon-btn" id="btn-theme" title="Change theme" aria-label="Change theme (light, sepia, dark)"><i data-icon="type"></i></button>
+  <button class="btn primary" id="btn-open"><i data-icon="upload"></i> Open EPUB</button>
+</header>
+
+
+<main>
+  <div id="dropzone" class="dropzone">
+    <i data-icon="book"></i>
+    <h2>Drop an EPUB here</h2>
+    <p>or <button class="linklike" id="btn-open-2">choose a file</button>. Books you open are kept in this browser on this device, so you can come back to them. Nothing is uploaded.</p>
+  </div>
+
+  <div class="section-head" id="recent-head" hidden>
+    <h2>Recently opened</h2>
+    <span id="lib-stats"></span>
+  </div>
+  <div id="grid" class="grid"></div>
+</main>
+
+<div id="drop-overlay"><div><i data-icon="upload"></i><p>Drop to add to your library</p></div></div>
+<input type="file" id="file-input" accept=".epub,application/epub+zip" multiple hidden aria-label="Choose EPUB files">
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

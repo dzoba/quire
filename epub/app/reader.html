@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' blob: data:; img-src 'self' blob: data:; font-src 'self' blob: data:; media-src 'self' blob: data:; frame-src 'self' blob: data:; connect-src 'self' blob: data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quire EPUB Reader</title>
+<link rel="icon" href="icons/icon32.png">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="reader.css">
+<script type="module" src="reader.js"></script>
+</head>
+<body data-state="loading">
+
+<header id="topbar">
+  <div class="bar-group">
+    <a class="icon-btn" id="btn-library" href="library.html" title="Library" aria-label="Library"><i data-icon="library"></i></a>
+    <button class="icon-btn" id="btn-toc" title="Contents and bookmarks (T)" aria-label="Contents and bookmarks (T)" aria-pressed="false"><i data-icon="toc"></i></button>
+  </div>
+  <div id="titles">
+    <div id="book-title"></div>
+    <div id="chapter-title"></div>
+  </div>
+  <div class="bar-group">
+    <button class="icon-btn" id="btn-search" title="Search the book (/)" aria-label="Search the book (/)" aria-pressed="false"><i data-icon="search"></i></button>
+    <button class="icon-btn" id="btn-bookmark" title="Bookmark this page (B)" aria-label="Bookmark this page (B)" aria-pressed="false"><i data-icon="bookmark"></i></button>
+    <button class="icon-btn" id="btn-tts" title="Read aloud (R)" aria-label="Read aloud (R)" aria-pressed="false"><i data-icon="speaker"></i></button>
+    <button class="icon-btn" id="btn-settings" title="Appearance (A)" aria-label="Appearance (A)" aria-pressed="false"><i data-icon="type"></i></button>
+    <button class="icon-btn" id="btn-help" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts (?)"><i data-icon="keyboard"></i></button>
+  </div>
+</header>
+
+<main id="stage">
+  <div id="viewer"></div>
+  <button class="edge" id="edge-prev" title="Previous page" aria-label="Previous page"><i data-icon="left"></i></button>
+  <button class="edge" id="edge-next" title="Next page" aria-label="Next page"><i data-icon="right"></i></button>
+
+  <aside id="sidebar" class="panel left" hidden>
+    <div class="panel-head">
+      <div class="seg" id="side-tabs">
+        <button data-tab="toc" aria-pressed="true">Contents</button>
+        <button data-tab="bookmarks" aria-pressed="false">Bookmarks <span id="bm-count"></span></button>
+      </div>
+      <button class="icon-btn" data-close="sidebar" title="Close (Esc)" aria-label="Close (Esc)"><i data-icon="close"></i></button>
+    </div>
+    <div class="panel-body" id="toc-view"></div>
+    <div class="panel-body" id="bookmarks-view" hidden></div>
+  </aside>
+
+  <aside id="searchpanel" class="panel right" hidden>
+    <div class="panel-head">
+      <div class="search-box">
+        <i data-icon="search"></i>
+        <input id="search-input" type="search" aria-label="Search this book" placeholder="Search this book" autocomplete="off" spellcheck="false">
+      </div>
+      <button class="icon-btn" data-close="searchpanel" title="Close (Esc)" aria-label="Close (Esc)"><i data-icon="close"></i></button>
+    </div>
+    <div class="search-opts">
+      <label><input type="checkbox" id="opt-case"> Match case</label>
+      <label><input type="checkbox" id="opt-words"> Whole words</label>
+      <span class="spacer"></span>
+      <button class="icon-btn small" id="search-prev" title="Previous result (Shift+Enter)" aria-label="Previous result (Shift+Enter)"><i data-icon="left"></i></button>
+      <button class="icon-btn small" id="search-next" title="Next result (Enter)" aria-label="Next result (Enter)"><i data-icon="right"></i></button>
+    </div>
+    <div id="search-status"><div id="search-progress"><div></div></div><span id="search-summary">Search every chapter. Press Enter to start.</span></div>
+    <div class="panel-body" id="search-results"></div>
+  </aside>
+
+  <div id="settings" class="popover card" hidden>
+    <div class="set-row">
+      <div class="set-label" id="lbl-theme-picker">Theme</div>
+      <div class="themes" id="theme-picker" aria-labelledby="lbl-theme-picker">
+        <button data-theme="light" title="Light"><span>Aa</span>Light</button>
+        <button data-theme="sepia" title="Sepia"><span>Aa</span>Sepia</button>
+        <button data-theme="dark" title="Dark"><span>Aa</span>Dark</button>
+      </div>
+    </div>
+    <div class="set-row">
+      <div class="set-label" id="lbl-flow-picker">Layout</div>
+      <div class="seg" id="flow-picker" aria-labelledby="lbl-flow-picker">
+        <button data-flow="paginated"><i data-icon="pages"></i> Pages</button>
+        <button data-flow="scrolled"><i data-icon="scroll"></i> Scroll</button>
+      </div>
+    </div>
+    <div class="set-row">
+      <div class="set-label" id="lbl-font-family">Font</div>
+      <select id="font-family" aria-labelledby="lbl-font-family">
+        <option value="publisher">Book's font</option>
+        <option value="serif">Serif</option>
+        <option value="sans">Sans-serif</option>
+        <option value="readable">Wide (Verdana)</option>
+        <option value="mono">Monospace</option>
+      </select>
+    </div>
+    <div class="set-row">
+      <div class="set-label" id="lbl-font-size">Size</div>
+      <div class="stepper">
+        <button id="font-smaller" class="small-a" title="Smaller (-)" aria-label="Smaller text">A</button>
+        <input type="range" id="font-size" aria-labelledby="lbl-font-size" min="12" max="32" step="1">
+        <button id="font-larger" class="big-a" title="Larger (+)" aria-label="Larger text">A</button>
+        <output id="font-size-out"></output>
+      </div>
+    </div>
+    <div class="set-row">
+      <div class="set-label" id="lbl-line-height">Spacing</div>
+      <div class="stepper">
+        <span class="lh tight"></span>
+        <input type="range" id="line-height" aria-labelledby="lbl-line-height" min="1.2" max="2.2" step="0.1">
+        <span class="lh loose"></span>
+        <output id="line-height-out"></output>
+      </div>
+    </div>
+    <div class="set-row">
+      <div class="set-label" id="lbl-width-picker">Width</div>
+      <div class="seg" id="width-picker" aria-labelledby="lbl-width-picker">
+        <button data-width="narrow">Narrow</button>
+        <button data-width="medium">Medium</button>
+        <button data-width="wide">Wide</button>
+      </div>
+    </div>
+    <div class="set-row toggles">
+      <label><input type="checkbox" id="opt-justify"> Justify text</label>
+      <label><input type="checkbox" id="opt-columns"> Two pages on wide screens</label>
+    </div>
+  </div>
+
+  <div id="tts-bar" class="card" hidden>
+    <button class="icon-btn" id="tts-play" title="Play / pause" aria-label="Play / pause"><i data-icon="pause"></i></button>
+    <button class="icon-btn" id="tts-stop" title="Stop" aria-label="Stop"><i data-icon="stop"></i></button>
+    <select id="tts-rate" title="Speed" aria-label="Reading speed">
+      <option value="0.8">0.8×</option><option value="1">1×</option><option value="1.2">1.2×</option>
+      <option value="1.5">1.5×</option><option value="1.8">1.8×</option><option value="2">2×</option>
+    </select>
+    <select id="tts-voice" title="Voice" aria-label="Voice"></select>
+    <span id="tts-status"></span>
+  </div>
+</main>
+
+<footer id="bottombar">
+  <div id="loc-left"></div>
+  <input type="range" id="progress" min="0" max="1" step="0.0001" value="0" aria-label="Book progress">
+  <div id="loc-right"></div>
+</footer>
+
+<div id="state-layer">
+  <div class="state-card card" id="state-loading">
+    <div class="spinner"></div>
+    <h2 id="loading-title">Opening book…</h2>
+    <p id="loading-detail"></p>
+    <div class="dl-bar"><div id="dl-progress"></div></div>
+  </div>
+  <div class="state-card card" id="state-error" hidden>
+    <span class="badge err"><i data-icon="alert"></i></span>
+    <h2 id="error-title">Something went wrong</h2>
+    <p id="error-detail"></p>
+    <div class="actions">
+      <button class="btn primary" id="error-retry" hidden>Try again</button>
+      <button class="btn" id="error-pick"><i data-icon="upload"></i> Open another file</button>
+      <a class="btn" href="library.html"><i data-icon="library"></i> Library</a>
+    </div>
+    <details><summary>Technical details</summary><code id="error-tech"></code></details>
+  </div>
+</div>
+
+<div id="help" class="modal-wrap" hidden>
+  <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="help-title">
+    <div class="panel-head"><h2 id="help-title">Keyboard shortcuts</h2><button class="icon-btn" data-close="help" title="Close (Esc)" aria-label="Close"><i data-icon="close"></i></button></div>
+    <dl class="keys">
+      <dt><kbd>←</kbd> <kbd>→</kbd> <kbd>PgUp</kbd> <kbd>PgDn</kbd></dt><dd>Previous / next page</dd>
+      <dt><kbd>Space</kbd> / <kbd>Shift</kbd>+<kbd>Space</kbd></dt><dd>Next / previous page</dd>
+      <dt><kbd>↑</kbd> <kbd>↓</kbd></dt><dd>Scroll (scroll mode) or turn page</dd>
+      <dt><kbd>[</kbd> <kbd>]</kbd></dt><dd>Previous / next chapter</dd>
+      <dt><kbd data-mod>Ctrl</kbd>+<kbd>F</kbd> or <kbd>/</kbd></dt><dd>Search the whole book</dd>
+      <dt><kbd>T</kbd></dt><dd>Contents</dd>
+      <dt><kbd>B</kbd></dt><dd>Bookmark this page</dd>
+      <dt><kbd>Shift</kbd>+<kbd>B</kbd></dt><dd>Show bookmarks</dd>
+      <dt><kbd>M</kbd></dt><dd>Switch pages / scroll</dd>
+      <dt><kbd>D</kbd></dt><dd>Cycle theme</dd>
+      <dt><kbd>+</kbd> <kbd>-</kbd></dt><dd>Font size</dd>
+      <dt><kbd>A</kbd></dt><dd>Appearance settings</dd>
+      <dt><kbd>R</kbd></dt><dd>Read aloud</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Close panels</dd>
+    </dl>
+  </div>
+</div>
+
+<div id="drop-overlay"><div><i data-icon="upload"></i><p>Drop an EPUB to open it</p></div></div>
+<input type="file" id="file-input" accept=".epub,application/epub+zip" hidden aria-label="Choose an EPUB file">
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

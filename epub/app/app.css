@@ -1,0 +1,121 @@
+/* Shared UI styles for the reader and the library. */
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --surface-2: #f3f1ec;
+  --text: #1f2328;
+  --muted: #6b6f76;
+  --border: rgba(20, 20, 30, 0.10);
+  --accent: #2e6f9e;
+  --accent-soft: rgba(46, 111, 158, 0.12);
+  --mark: rgba(255, 196, 0, 0.45);
+  --danger: #b4412f;
+  --shadow: 0 10px 30px rgba(20, 20, 40, 0.12), 0 2px 6px rgba(20, 20, 40, 0.06);
+  --radius: 12px;
+  --ui-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color-scheme: light;
+}
+:root[data-theme="sepia"] {
+  --bg: #f4ecd8;
+  --surface: #faf4e6;
+  --surface-2: #ece2c9;
+  --text: #4a3b2c;
+  --muted: #86735c;
+  --border: rgba(90, 60, 30, 0.14);
+  --accent: #9a5b2c;
+  --accent-soft: rgba(154, 91, 44, 0.13);
+  --mark: rgba(214, 140, 40, 0.38);
+}
+:root[data-theme="dark"] {
+  --bg: #17191c;
+  --surface: #202327;
+  --surface-2: #2a2e33;
+  --text: #dcd8cf;
+  --muted: #8e939a;
+  --border: rgba(255, 255, 255, 0.09);
+  --accent: #7fb2dc;
+  --accent-soft: rgba(127, 178, 220, 0.15);
+  --mark: rgba(255, 200, 60, 0.35);
+  --danger: #e07a66;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.45 var(--ui-font);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+
+.icon-btn {
+  display: inline-grid; place-items: center;
+  width: 36px; height: 36px;
+  border: 0; border-radius: 9px;
+  background: transparent; color: var(--muted);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.icon-btn:hover { background: var(--surface-2); color: var(--text); }
+.icon-btn[aria-pressed="true"], .icon-btn.active { color: var(--accent); background: var(--accent-soft); }
+.icon-btn svg { width: 20px; height: 20px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: 9px;
+  border: 1px solid var(--border); background: var(--surface);
+  cursor: pointer; font-weight: 500;
+}
+.btn:hover { background: var(--surface-2); }
+.btn.primary { background: var(--accent); border-color: transparent; color: #fff; }
+:root[data-theme="dark"] .btn.primary { color: #10141a; }
+.btn.primary:hover { filter: brightness(1.07); }
+.btn svg { width: 16px; height: 16px; }
+
+kbd {
+  font: 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  padding: 3px 6px; border-radius: 5px;
+  background: var(--surface-2); border: 1px solid var(--border);
+}
+
+.seg { display: flex; background: var(--surface-2); border-radius: 9px; padding: 3px; gap: 3px; }
+.seg button {
+  flex: 1; border: 0; background: transparent; padding: 6px 8px; border-radius: 7px;
+  cursor: pointer; color: var(--muted); font-weight: 500; white-space: nowrap;
+}
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+
+.toast {
+  position: fixed; left: 50%; bottom: 72px; transform: translateX(-50%) translateY(10px);
+  background: var(--text); color: var(--bg); padding: 9px 16px; border-radius: 999px;
+  font-weight: 500; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 100;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.state-card {
+  max-width: 520px; margin: 12vh auto 0; padding: 32px 36px; text-align: left;
+}
+.state-card h1, .state-card h2 { font-size: 20px; margin: 10px 0 8px; }
+.state-card p { color: var(--muted); margin: 0 0 14px; }
+.state-card .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.state-card .badge { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); }
+.state-card .badge.err { background: rgba(180, 65, 47, 0.12); color: var(--danger); }
+.state-card .badge svg { width: 24px; height: 24px; }
+.state-card details { margin-top: 10px; color: var(--muted); font-size: 12px; }
+.state-card code { font-size: 12px; word-break: break-all; }
+.state-card ol { color: var(--muted); padding-left: 20px; }
+.state-card ol li { margin: 4px 0; }
+a.btn { text-decoration: none; color: inherit; }
+a.btn.primary { color: #fff; }
+
+/* Quire web: a visible keyboard focus ring on every control. */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
