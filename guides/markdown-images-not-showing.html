@@ -1,0 +1,224 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why images don’t show in a Markdown preview – Quire</title>
+<meta name="description" content="Missing images in Markdown usually come down to the path, the preview&#x27;s security rules, or a viewer that blocks images for privacy. How to tell which and fix it.">
+<link rel="canonical" href="https://quireapps.com/guides/markdown-images-not-showing.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="Why images don’t show in a Markdown preview – Quire">
+<meta property="og:description" content="Missing images in a Markdown preview: wrong paths, security rules, or a viewer that blocks them on purpose.">
+<meta property="og:url" content="https://quireapps.com/guides/markdown-images-not-showing.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why images don’t show in a Markdown preview – Quire">
+<meta name="twitter:description" content="Missing images in a Markdown preview: wrong paths, security rules, or a viewer that blocks them on purpose.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "@id": "https://quireapps.com/guides/markdown-images-not-showing.html#howto",
+      "name": "Why images don’t show in a Markdown preview",
+      "description": "Find out why an image in a Markdown file isn’t showing and fix it.",
+      "dateModified": "2026-10-15",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Check the path",
+          "text": "A relative path such as img/chart.png is relative to the folder of the .md file, not to wherever you opened it from. Check the spelling and the capitals.",
+          "url": "https://quireapps.com/guides/markdown-images-not-showing.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Check for spaces",
+          "text": "A path with spaces breaks the link. Write ![Chart](<my images/chart.png>) with angle brackets, or replace each space with %20.",
+          "url": "https://quireapps.com/guides/markdown-images-not-showing.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Check where the image lives",
+          "text": "Some previews only load images from certain places. Move the image inside the project folder, or use an https:// address.",
+          "url": "https://quireapps.com/guides/markdown-images-not-showing.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Check the viewer",
+          "text": "If the preview shows a label such as “Image not loaded” instead of a broken-image icon, the viewer blocked it on purpose.",
+          "url": "https://quireapps.com/guides/markdown-images-not-showing.html#step-4"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "The Markdown file and its images"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "A Markdown preview"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Markdown images not showing",
+          "item": "https://quireapps.com/guides/markdown-images-not-showing.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">Markdown images not showing</span></nav>
+  <h1>Why images don’t show in a Markdown preview</h1>
+<div class="answer">
+    <p><strong>Short answer:</strong> it is usually one of three things. The path is wrong for where the .md file sits. The preview refuses to load images from that place for security reasons. Or the viewer blocks images on purpose, for privacy.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Tool behaviour follows each tool’s documentation; Quire behaviour comes from its source code.</p>
+
+  <h2>Work through the usual causes</h2>
+<ol class="steps">
+  <li id="step-1"><strong>Check the path</strong><p>A relative path such as <code>img/chart.png</code> is relative to the folder of the .md file, not to wherever you opened it from. Check the spelling and the capitals.</p></li>
+  <li id="step-2"><strong>Check for spaces</strong><p>A path with spaces breaks the link. Write <code>![Chart](&lt;my images/chart.png&gt;)</code> with angle brackets, or replace each space with <code>%20</code>.</p></li>
+  <li id="step-3"><strong>Check where the image lives</strong><p>Some previews only load images from certain places. Move the image inside the project folder, or use an <code>https://</code> address.</p></li>
+  <li id="step-4"><strong>Check the viewer</strong><p>If the preview shows a label such as “Image not loaded” instead of a broken-image icon, the viewer blocked it on purpose.</p></li>
+</ol>
+
+  <h2>Security rules in common previews</h2>
+  <ul>
+    <li><strong>VS Code.</strong> The preview loads files only from inside the open workspace. A maintainer <a href="https://github.com/Microsoft/vscode/issues/64685">described this as by design</a>, so <code>../../photos/x.png</code> outside the folder won’t show. Its default security level also blocks images over plain <code>http</code>; <code>https</code> works (<a href="https://code.visualstudio.com/docs/languages/markdown">VS Code docs</a>).</li>
+    <li><strong>PowerToys on Windows.</strong> The File Explorer Markdown preview shows no local images until you turn on <strong>Show local images</strong>, and then only from the file’s own folder tree. <a href="https://learn.microsoft.com/en-us/windows/powertoys/file-explorer">Online images stay blocked.</a></li>
+    <li><strong>GitHub.</strong> Use relative paths for images in the repository; GitHub <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">rewrites them</a> for the branch you’re viewing. An absolute link to your own machine, such as <code>C:\Users\…</code> or <code>/Users/…</code>, can never work there.</li>
+  </ul>
+
+  <h2>Why some viewers block images on purpose</h2>
+  <p>An image in Markdown can point anywhere on the internet. Loading it sends a request to that server, which learns your IP address and the time you opened the document. That is how tracking pixels in email work, and a Markdown file from someone else can do the same.</p>
+  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> It never loads images in a document. Each one appears as a label such as “[Image not loaded: Sales chart]”, using the image’s alt text, so you can see what was there without any request being made. The same applies to the HTML copy it downloads. This is a deliberate choice, not a bug, and there is no setting to change it.</p>
+<figure class="shot">
+  <picture><source srcset="../img/md-reader.webp" type="image/webp"><img src="../img/md-reader.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown showing a rendered document with a heading outline on the left"></picture>
+  <figcaption>Quire Markdown with its outline of headings.</figcaption>
+</figure>
+  <p>If you need to see the pictures, open the file somewhere that shows images: GitHub for a repository, VS Code with the project folder open, or an editor such as Typora or Obsidian. Quire is for reading the text: README files, notes and agent plans, with an outline, find and highlighted code. It is a viewer for UTF-8 files up to 2 MB, and diagrams and math aren’t drawn.</p>
+<aside class="callout" aria-label="Quire Markdown">
+  <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
+  <div>
+    <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
+    <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
+    <div class="actions">
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="link" href="../#markdown">Details and limits</a>
+    </div>
+  </div>
+</aside>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Why does my image show on GitHub but not locally?</summary><p>Usually the path starts with <code>/</code>. On GitHub that means the repository root; on your computer it means the root of the disk. Use a path relative to the .md file instead.</p></details>
+    <details><summary>Does alt text matter if the image loads?</summary><p>Yes. Screen readers read it, it appears when an image can’t load, and viewers like Quire use it as the label for a blocked image.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="preview-readme-before-github.html">How to preview a README before pushing it to GitHub</a></li>
+    <li><a href="markdown-viewer-vs-editor.html">Markdown viewer or Markdown editor: which do you need?</a></li>
+    <li><a href="open-md-file-on-windows.html">How to open .md files on Windows</a></li>
+    <li><a href="markdown-to-html.html">How to convert Markdown to HTML</a></li>
+    <li><a href="view-markdown-in-chrome.html">How to view Markdown (.md) files in Chrome</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>

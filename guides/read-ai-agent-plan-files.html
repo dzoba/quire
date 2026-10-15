@@ -1,0 +1,233 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to find and read Claude Code, Cursor and Codex plan files – Quire</title>
+<meta name="description" content="Where Claude Code, Cursor and Codex keep the Markdown plans they write, how to change the folder, and how to read a long plan comfortably before you approve it.">
+<link rel="canonical" href="https://quireapps.com/guides/read-ai-agent-plan-files.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="How to find and read Claude Code, Cursor and Codex plan files – Quire">
+<meta property="og:description" content="Where coding agents keep their Markdown plans, and how to read them comfortably.">
+<meta property="og:url" content="https://quireapps.com/guides/read-ai-agent-plan-files.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to find and read Claude Code, Cursor and Codex plan files – Quire">
+<meta name="twitter:description" content="Where coding agents keep their Markdown plans, and how to read them comfortably.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "@id": "https://quireapps.com/guides/read-ai-agent-plan-files.html#howto",
+      "name": "How to find and read Claude Code, Cursor and Codex plan files",
+      "description": "Find the Markdown plan file that Claude Code writes in plan mode and open it in a viewer that follows changes.",
+      "dateModified": "2026-10-15",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Make a plan",
+          "text": "In Claude Code, press Shift+Tab until the status bar shows plan mode, or start with claude --permission-mode plan, then describe the change.",
+          "url": "https://quireapps.com/guides/read-ai-agent-plan-files.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Find the file",
+          "text": "Plans are written to ~/.claude/plans unless you set plansDirectory. The newest file there is the current plan.",
+          "url": "https://quireapps.com/guides/read-ai-agent-plan-files.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Open it in a viewer",
+          "text": "In Quire Markdown, choose Open file. On a Mac, press ⇧⌘G in the file dialog and type ~/.claude/plans to reach the hidden folder.",
+          "url": "https://quireapps.com/guides/read-ai-agent-plan-files.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Follow it",
+          "text": "Turn on Follow file. If the agent revises the plan, the page updates while the tab is visible.",
+          "url": "https://quireapps.com/guides/read-ai-agent-plan-files.html#step-4"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Claude Code, Cursor or Codex"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "A Markdown viewer such as Quire Markdown"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Read AI agent plan files",
+          "item": "https://quireapps.com/guides/read-ai-agent-plan-files.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">Read AI agent plan files</span></nav>
+  <h1>How to find and read Claude Code, Cursor and Codex plan files</h1>
+<div class="answer">
+    <p><strong>Short answer:</strong> Claude Code saves plans as Markdown files in <code>~/.claude/plans</code> by default. Cursor saves plans in your home directory and can save them into the project with <strong>Save to workspace</strong>. Codex doesn’t document a plan file of its own; OpenAI suggests asking it to keep one, called PLANS.md, in the repository.</p>
+    <p>A plan is ordinary Markdown, so any Markdown viewer can show it formatted.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Agent details follow Anthropic’s, Cursor’s and OpenAI’s documentation as of this date; these tools change quickly.</p>
+
+  <h2>Where each agent keeps its plans</h2>
+  <h3>Claude Code</h3>
+  <p>In plan mode Claude reads code and proposes a plan without editing files until you approve. Anthropic’s <a href="https://code.claude.com/docs/en/settings-reference">settings reference</a> says plan files go to <code>~/.claude/plans</code> unless you set <code>plansDirectory</code>, a path relative to the project root such as <code>"./plans"</code>. Claude Code falls back to the default if the path points outside the project. Pressing <kbd>Ctrl</kbd>+<kbd>G</kbd> at the approval prompt opens the plan in your text editor so you can change it, as the <a href="https://code.claude.com/docs/en/permission-modes">permission modes page</a> describes.</p>
+  <h3>Cursor</h3>
+  <p>Press <kbd>Shift</kbd>+<kbd>Tab</kbd> in the chat input to switch to Plan Mode. Cursor’s <a href="https://cursor.com/docs/agent/plan-mode">documentation</a> says plans are saved in your home directory by default, and <strong>Save to workspace</strong> moves one into the project so it can be shared and kept.</p>
+  <h3>Codex</h3>
+  <p>We found no documented plan file that Codex writes by default. OpenAI’s cookbook article <a href="https://cookbook.openai.com/articles/codex_exec_plans">“Using PLANS.md for multi-hour problem solving”</a> describes a convention instead: an AGENTS.md rule tells Codex to write an “ExecPlan” following a PLANS.md template and keep it up to date as it works. That plan is a Markdown file in your repository.</p>
+
+  <h2>Read a plan in Chrome</h2>
+  <p>Long plans are easier to judge formatted: headings become a table of contents, checklists become ticks, and code samples are highlighted.</p>
+<ol class="steps">
+  <li id="step-1"><strong>Make a plan</strong><p>In Claude Code, press <kbd>Shift</kbd>+<kbd>Tab</kbd> until the status bar shows plan mode, or start with <code>claude --permission-mode plan</code>, then describe the change.</p></li>
+  <li id="step-2"><strong>Find the file</strong><p>Plans are written to <code>~/.claude/plans</code> unless you set <code>plansDirectory</code>. The newest file there is the current plan.</p></li>
+  <li id="step-3"><strong>Open it in a viewer</strong><p>In Quire Markdown, choose <strong>Open file</strong>. On a Mac, press <kbd>⇧</kbd><kbd>⌘</kbd><kbd>G</kbd> in the file dialog and type <code>~/.claude/plans</code> to reach the hidden folder.</p></li>
+  <li id="step-4"><strong>Follow it</strong><p>Turn on <strong>Follow file</strong>. If the agent revises the plan, the page updates while the tab is visible.</p></li>
+</ol>
+  <p>On Windows the default folder is <code>.claude\plans</code> inside your user folder. File dialogs hide folders whose names start with a dot; on a Mac, <kbd>⇧</kbd><kbd>⌘</kbd><kbd>G</kbd> (“Go to Folder”) lets you type the path.</p>
+
+  <h2>Why use a viewer for this</h2>
+  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> It was built for README files, notes and coding-agent plans.</p>
+  <ul>
+    <li><strong>It can’t change the plan.</strong> It is a viewer only, so you won’t edit a file the agent is still using by mistake.</li>
+    <li><strong>Outline and find.</strong> Jump between phases of a long plan, or search for a file name.</li>
+    <li><strong>Follow file.</strong> Checks the file you opened every two seconds while the tab is visible. Dropped files are snapshots and don’t update, and following stops if you close or reload the viewer.</li>
+    <li><strong>Private.</strong> No account, no upload to us. Up to ten recent documents are kept in your Chrome profile, and you can remove them one by one.</li>
+  </ul>
+<figure class="shot">
+  <picture><source srcset="../img/md-split.webp" type="image/webp"><img src="../img/md-split.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown in the dark theme with the rendered page and Markdown source side by side"></picture>
+  <figcaption>Split view in the dark theme: the rendered page beside the Markdown source.</figcaption>
+</figure>
+  <p>Limits: UTF-8 files up to 2 MB; images appear as blocked references; Mermaid diagrams and math are shown as source, not drawn.</p>
+<aside class="callout" aria-label="Quire Markdown">
+  <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
+  <div>
+    <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
+    <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
+    <div class="actions">
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="link" href="../#markdown">Details and limits</a>
+    </div>
+  </div>
+</aside>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Can I keep Claude Code plans in my repository?</summary><p>Yes. Set <code>"plansDirectory": "./plans"</code> in <code>.claude/settings.json</code>. Use forward slashes; Anthropic notes that a backslash path makes Claude Code fall back to <code>~/.claude/plans</code> on macOS, Linux and WSL.</p></details>
+    <details><summary>Do old plans pile up?</summary><p>They are files on your disk, so they stay until you delete them. Each Claude Code plan has its own file name, so the newest file is usually the one you want.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="live-preview-markdown-file.html">How to watch a Markdown file update live while it is edited</a></li>
+    <li><a href="markdown-viewer-vs-editor.html">Markdown viewer or Markdown editor: which do you need?</a></li>
+    <li><a href="open-md-file-on-mac.html">How to open .md files on a Mac</a></li>
+    <li><a href="markdown-code-syntax-highlighting.html">How to get syntax highlighting in Markdown code blocks</a></li>
+    <li><a href="view-markdown-in-chrome.html">How to view Markdown (.md) files in Chrome</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>

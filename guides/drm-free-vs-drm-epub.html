@@ -1,0 +1,221 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DRM-free vs DRM-protected EPUB: how to tell the difference – Quire</title>
+<meta name="description" content="An EPUB can be DRM-free or locked with Adobe DRM, Readium LCP or a store’s own system. How to tell which you have, and which readers can open each kind.">
+<link rel="canonical" href="https://quireapps.com/guides/drm-free-vs-drm-epub.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="DRM-free vs DRM-protected EPUB: how to tell the difference – Quire">
+<meta property="og:description" content="An EPUB can be DRM-free or locked with Adobe DRM, Readium LCP or a store’s own system. How to tell which you have, and what will open it.">
+<meta property="og:url" content="https://quireapps.com/guides/drm-free-vs-drm-epub.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DRM-free vs DRM-protected EPUB: how to tell the difference – Quire">
+<meta name="twitter:description" content="An EPUB can be DRM-free or locked with Adobe DRM, Readium LCP or a store’s own system. How to tell which you have, and what will open it.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://quireapps.com/guides/drm-free-vs-drm-epub.html#article",
+      "headline": "DRM-free vs DRM-protected EPUB: how to tell, and what will open them",
+      "description": "The difference between DRM-free and DRM-protected EPUB files, the kinds of DRM you will meet, how to tell which one you have, and which readers open each.",
+      "dateModified": "2026-10-15",
+      "author": {
+        "@type": "Organization",
+        "name": "Quire",
+        "url": "https://quireapps.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Quire",
+        "url": "https://quireapps.com/"
+      },
+      "image": "https://quireapps.com/img/og.png",
+      "mainEntityOfPage": "https://quireapps.com/guides/drm-free-vs-drm-epub.html"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quireapps.com/guides/drm-free-vs-drm-epub.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can Quire EPUB Reader open DRM-protected books?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Quire opens DRM-free EPUB 2 and EPUB 3 books only. A protected book may fail to open, or open with scrambled text where the words should be. Read protected books in the store’s app, in Adobe Digital Editions or, for Readium LCP books, in Thorium."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a file called encryption.xml mean a book has DRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not on its own. The EPUB standard also uses that file for font obfuscation, which DRM-free books can contain. A META-INF/rights.xml file is the stronger sign, because the standard reserves it for digital rights information."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is an .acsm file a DRM-protected EPUB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a ticket for one. Opening the .acsm in Adobe Digital Editions downloads the actual book, which is protected with Adobe DRM."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DRM-free vs DRM-protected EPUB",
+          "item": "https://quireapps.com/guides/drm-free-vs-drm-epub.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">DRM-free vs DRM-protected EPUB</span></nav>
+  <h1>DRM-free vs DRM-protected EPUB: how to tell, and what will open them</h1>
+  <div class="answer">
+<p><strong>Short answer:</strong> a DRM-free EPUB is an ordinary file. Any EPUB reader opens it, and you can back it up and move it between apps. A DRM-protected EPUB is encrypted and opens only in software authorized to unlock it: usually the store’s or library’s own app, or Adobe Digital Editions.</p>
+    <p>Free public-domain books are DRM-free. Most bought books and all library loans are protected.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Quire’s behaviour with an encrypted book was checked in Chrome for Testing 153 on a Mac, using a test file that imitates Adobe’s encryption.</p>
+
+<h2>The kinds of EPUB you’ll come across</h2>
+  <ul>
+    <li><strong>DRM-free.</strong> Public-domain books from sites such as Project Gutenberg and Standard Ebooks, books some publishers and authors sell without DRM, and files you made yourself. They open in Apple Books, calibre, Thorium, Google Play Books and Quire EPUB Reader alike.</li>
+    <li><strong>Adobe DRM.</strong> Many bookshops and libraries use Adobe’s system. You usually download an <strong>.acsm</strong> file, which Adobe Digital Editions (ADE) turns into the protected book. Adobe says ADE “fully supports Adobe Content Server DRM technology”. Since 23 June 2026, ADE is authorized with a ByteBooks ID rather than an Adobe ID, according to <a href="https://help.overdrive.com/en-us/2336.htm">OverDrive’s help</a>.</li>
+    <li><strong>Readium LCP.</strong> A newer DRM that EDRLab describes as “great for library lending”, published as an ISO standard (ISO/IEC 23078-2:2024). Thorium Reader opens LCP-protected books, and the Internet Archive says its lending library has “switched over to LCP” for offline reading.</li>
+    <li><strong>Books that stay in a store’s app.</strong> Books bought from Apple, Amazon or Google are normally read in that company’s own apps. Google lets you export some purchases as an EPUB or an .acsm ticket, but says “Some publishers don’t allow file exports” and “You can’t open most books from Google Play on a Kindle device.”</li>
+  </ul>
+
+  <h2>How to tell which one you have</h2>
+  <ol>
+    <li><strong>Where it came from.</strong> A library loan is protected. A bought book usually is; calibre’s FAQ says “Most purchased EPUB books have DRM.” A public-domain site’s book is not. Many shops say “DRM-free” on the book’s page when it is.</li>
+    <li><strong>The file name.</strong> An .acsm file is a ticket for an Adobe-protected book, not a book.</li>
+    <li><strong>Try a plain reader.</strong> Open the file in calibre or Quire. calibre’s FAQ says DRM “prevents calibre from opening them”. In Quire, a test file imitating Adobe’s encryption opened with its title showing but scrambled symbols instead of text.</li>
+    <li><strong>Look inside, if you’re comfortable doing so.</strong> An EPUB is a ZIP archive. Copy the file, rename the copy to .zip and open it. The EPUB standard reserves <code>META-INF/rights.xml</code> for “information about digital rights”. A <code>META-INF/encryption.xml</code> file on its own isn’t proof, because the standard also uses it for font obfuscation in books that have no DRM.</li>
+  </ol>
+
+  <h2>What opens what</h2>
+  <ul>
+    <li><strong>DRM-free EPUB:</strong> any EPUB reader.</li>
+    <li><strong>Adobe DRM (.acsm):</strong> Adobe Digital Editions, and apps and e-readers authorized with the same account. See <a href="open-acsm-file.html">how to open an .acsm file</a>.</li>
+    <li><strong>Readium LCP:</strong> Thorium Reader and other LCP-compatible apps.</li>
+    <li><strong>Store-locked books:</strong> the store’s own app or website.</li>
+  </ul>
+  <p>Quire EPUB Reader, which we make, is only for DRM-free books. It doesn’t support any DRM system.</p>
+
+  <h2>About removing DRM</h2>
+  <p>This guide doesn’t cover removing DRM. Whether you may do it depends on the law where you live and on the terms you bought the book under. When you have a choice, buying the DRM-free edition avoids the question.</p>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Can Quire EPUB Reader open DRM-protected books?</summary><p>No. Quire opens DRM-free EPUB 2 and EPUB 3 books only. A protected book may fail to open, or open with scrambled text where the words should be. Read protected books in the store’s app, in Adobe Digital Editions or, for Readium LCP books, in Thorium.</p></details>
+    <details><summary>Does a file called encryption.xml mean a book has DRM?</summary><p>Not on its own. The EPUB standard also uses that file for font obfuscation, which DRM-free books can contain. A META-INF/rights.xml file is the stronger sign, because the standard reserves it for digital rights information.</p></details>
+    <details><summary>Is an .acsm file a DRM-protected EPUB?</summary><p>It is a ticket for one. Opening the .acsm in Adobe Digital Editions downloads the actual book, which is protected with Adobe DRM.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="open-acsm-file.html">How to open an .acsm file</a></li>
+    <li><a href="epub-file-wont-open.html">EPUB file won’t open? Causes and fixes</a></li>
+    <li><a href="free-drm-free-epub-books.html">Where to download free, DRM-free EPUB books</a></li>
+    <li><a href="send-epub-to-kindle.html">How to send an EPUB to a Kindle</a></li>
+    <li><a href="open-epub-in-chrome.html">How to open EPUB files in Chrome</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EPUB vs PDF: which format is better for reading? – Quire</title>
+<meta name="description" content="EPUB text reflows to fit any screen and your font settings; PDF keeps fixed pages. When to choose each, what opens them, and what to expect if you convert.">
+<link rel="canonical" href="https://quireapps.com/guides/epub-vs-pdf.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="EPUB vs PDF: which format is better for reading? – Quire">
+<meta property="og:description" content="EPUB text reflows to fit any screen and your font settings; PDF keeps fixed pages. When to choose each, what opens them, and converting.">
+<meta property="og:url" content="https://quireapps.com/guides/epub-vs-pdf.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EPUB vs PDF: which format is better for reading? – Quire">
+<meta name="twitter:description" content="EPUB text reflows to fit any screen and your font settings; PDF keeps fixed pages. When to choose each, what opens them, and converting.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://quireapps.com/guides/epub-vs-pdf.html#article",
+      "headline": "EPUB vs PDF: which format is better for reading?",
+      "description": "How EPUB and PDF differ for reading: reflowable text versus fixed pages, what each is good at, what opens them, and what converting between them involves.",
+      "dateModified": "2026-10-15",
+      "author": {
+        "@type": "Organization",
+        "name": "Quire",
+        "url": "https://quireapps.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Quire",
+        "url": "https://quireapps.com/"
+      },
+      "image": "https://quireapps.com/img/og.png",
+      "mainEntityOfPage": "https://quireapps.com/guides/epub-vs-pdf.html"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://quireapps.com/guides/epub-vs-pdf.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can Chrome open EPUB files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Chrome has a built-in PDF viewer but no EPUB reader, so it downloads .epub files. A reader extension opens them in a tab instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert EPUB to PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. calibre, which is free, converts EPUB to PDF. The PDF has fixed pages, so pick a page size that suits the screen you will read on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert PDF to EPUB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can try with calibre, but its manual warns that PDF is “one of the worst formats to convert from”. Simple text-only PDFs work best."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EPUB vs PDF",
+          "item": "https://quireapps.com/guides/epub-vs-pdf.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">EPUB vs PDF</span></nav>
+  <h1>EPUB vs PDF: which format is better for reading?</h1>
+  <div class="answer">
+<p><strong>Short answer:</strong> choose EPUB for books you read from start to finish, especially on different screens. The text reflows to fit the window and your choice of font, size and theme. Choose PDF when the page itself matters: forms, papers with figures and equations, and anything meant to be printed or cited by page number.</p>
+    <p>Chrome opens PDFs with nothing extra. EPUB needs a reader app or extension.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Format details follow the <a href="https://www.w3.org/TR/epub-overview-33/">W3C EPUB 3 overview</a>.</p>
+
+<h2>The basic difference</h2>
+  <p>An EPUB is a packaged website. The W3C’s overview of the format says “An EPUB file is effectively just a ZIP file with some identifying metadata”, and the book inside is built from HTML, CSS and images. The text is “formatted on the fly” by the reader, so it fills whatever window you have and follows your settings.</p>
+  <p>A PDF is a set of finished pages. Every line, picture and page break is where the author put it, on every screen.</p>
+  <p>There is a middle ground: fixed-layout EPUBs, used for books where design matters, such as children’s picture books. They behave much more like a PDF.</p>
+
+  <h2>Side by side</h2>
+  <ul>
+    <li><strong>Small screens.</strong> EPUB reflows to fit a phone or a narrow window. A PDF page has to be zoomed and panned.</li>
+    <li><strong>Your own settings.</strong> In an EPUB you can change the font, size, spacing and theme, including dark mode. In a PDF you can mostly zoom.</li>
+    <li><strong>Page numbers.</strong> PDF page numbers are the same for everyone. EPUB “pages” depend on your window and font size, so cite chapters or sections, or use a PDF when someone needs “page 47”.</li>
+    <li><strong>Forms and signatures.</strong> PDF. EPUB has no fillable forms.</li>
+    <li><strong>Complex layouts.</strong> Tables, equations and figures placed next to the text survive in a PDF exactly. In a reflowable EPUB they depend on the reader.</li>
+    <li><strong>Opening them.</strong> Every computer opens a PDF: Chrome, Edge and Safari have viewers built in. EPUB needs Apple Books on a Mac, an app on Windows, or a browser extension. See <a href="open-epub-on-windows.html">EPUB on Windows</a> and <a href="open-epub-in-chrome.html">EPUB in Chrome</a>.</li>
+    <li><strong>DRM.</strong> Either can be protected. Adobe’s system, for example, delivers both EPUB and PDF books through .acsm files.</li>
+  </ul>
+
+  <h2>Which to download when you have the choice</h2>
+  <ul>
+    <li><strong>A novel, history or other mostly-text book:</strong> EPUB.</li>
+    <li><strong>A textbook, manual or anything with diagrams on most pages:</strong> look at a sample of each. If the EPUB is fixed-layout or the layout falls apart, take the PDF.</li>
+    <li><strong>An academic paper or a document you’ll annotate and send back:</strong> PDF.</li>
+    <li><strong>Reading on a Kindle:</strong> Amazon’s Send to Kindle accepts both. See <a href="send-epub-to-kindle.html">how to send an EPUB to a Kindle</a>.</li>
+  </ul>
+
+  <h2>Converting between them</h2>
+  <p>calibre, a free desktop app, converts between the two. EPUB to PDF works well, though you have to choose a page size, and its manual notes the output profile sets the PDF’s page size. PDF to EPUB is harder: calibre’s manual calls PDF “one of the worst formats to convert from” and warns that results can range “from decent to unusable”, especially with columns or scanned pages. If a book exists as an EPUB, getting that edition beats converting the PDF.</p>
+
+  <h2>Reading both in Chrome</h2>
+  <p>Chrome already reads PDFs, and its viewer can fill in forms and add highlights. For EPUB, Quire EPUB Reader, our extension, opens books in a tab. We also make <a href="../#pdf">Quire PDF</a> for annotating and signing PDFs.</p>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Can Chrome open EPUB files?</summary><p>No. Chrome has a built-in PDF viewer but no EPUB reader, so it downloads .epub files. A reader extension opens them in a tab instead.</p></details>
+    <details><summary>Can I convert EPUB to PDF?</summary><p>Yes. calibre, which is free, converts EPUB to PDF. The PDF has fixed pages, so pick a page size that suits the screen you will read on.</p></details>
+    <details><summary>Can I convert PDF to EPUB?</summary><p>You can try with calibre, but its manual warns that PDF is “one of the worst formats to convert from”. Simple text-only PDFs work best.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="open-epub-in-chrome.html">How to open EPUB files in Chrome</a></li>
+    <li><a href="fill-pdf-form-in-chrome.html">How to fill a PDF form in Chrome without Adobe</a></li>
+    <li><a href="annotate-pdf-in-chrome.html">How to highlight, annotate and sign a PDF in Chrome</a></li>
+    <li><a href="drm-free-vs-drm-epub.html">DRM-free vs DRM-protected EPUB</a></li>
+    <li><a href="send-epub-to-kindle.html">How to send an EPUB to a Kindle</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>

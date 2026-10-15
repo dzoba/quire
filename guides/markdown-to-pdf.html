@@ -1,0 +1,230 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to print a Markdown file or save it as a PDF – Quire</title>
+<meta name="description" content="Turn a .md file into a clean printout or PDF: print a rendered view from Chrome, export from VS Code or Typora, or convert with pandoc. What each method handles well.">
+<link rel="canonical" href="https://quireapps.com/guides/markdown-to-pdf.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="How to print a Markdown file or save it as a PDF – Quire">
+<meta property="og:description" content="Ways to print a Markdown file or turn it into a PDF, and what each method handles well.">
+<meta property="og:url" content="https://quireapps.com/guides/markdown-to-pdf.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to print a Markdown file or save it as a PDF – Quire">
+<meta name="twitter:description" content="Ways to print a Markdown file or turn it into a PDF, and what each method handles well.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "@id": "https://quireapps.com/guides/markdown-to-pdf.html#howto",
+      "name": "How to print a Markdown file or save it as a PDF",
+      "description": "Render a Markdown file in Chrome and save it as a PDF through the print dialog.",
+      "dateModified": "2026-10-15",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Open the file formatted",
+          "text": "Open the .md file in Quire Markdown with Open file, or drop it onto the viewer.",
+          "url": "https://quireapps.com/guides/markdown-to-pdf.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Choose Print",
+          "text": "Open the viewer’s More menu and choose Print / save as PDF.",
+          "url": "https://quireapps.com/guides/markdown-to-pdf.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Pick Save as PDF",
+          "text": "In Chrome’s print dialog, set Destination to Save as PDF, or choose a printer.",
+          "url": "https://quireapps.com/guides/markdown-to-pdf.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Save",
+          "text": "Click Save (or Print) and choose where to put the file.",
+          "url": "https://quireapps.com/guides/markdown-to-pdf.html#step-4"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Google Chrome"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Quire Markdown, or another app that renders Markdown"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Print Markdown or save as PDF",
+          "item": "https://quireapps.com/guides/markdown-to-pdf.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">Print Markdown or save as PDF</span></nav>
+  <h1>How to print a Markdown file or save it as a PDF</h1>
+<div class="answer">
+    <p><strong>Short answer:</strong> printing the raw .md file gives you the Markdown characters, not formatting. Render it first, then print or export. The quickest route is a browser viewer plus Chrome’s <strong>Save as PDF</strong>. For repeatable conversions, use VS Code’s Markdown PDF extension, Typora’s export, or pandoc.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Third-party steps follow each tool’s documentation.</p>
+
+  <h2>From Chrome</h2>
+  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> Its print layout is made for paper.</p>
+<ol class="steps">
+  <li id="step-1"><strong>Open the file formatted</strong><p>Open the .md file in Quire Markdown with <strong>Open file</strong>, or drop it onto the viewer.</p></li>
+  <li id="step-2"><strong>Choose Print</strong><p>Open the viewer’s <strong>More</strong> menu and choose <strong>Print / save as PDF</strong>.</p></li>
+  <li id="step-3"><strong>Pick Save as PDF</strong><p>In Chrome’s print dialog, set <strong>Destination</strong> to <strong>Save as PDF</strong>, or choose a printer.</p></li>
+  <li id="step-4"><strong>Save</strong><p>Click <strong>Save</strong> (or <strong>Print</strong>) and choose where to put the file.</p></li>
+</ol>
+  <p>What the printout includes: only the rendered document. The toolbar, outline and copy buttons are left out, long code lines wrap instead of being cut off, tables use the full page width, and level-2 headings aren’t left stranded at the bottom of a page.</p>
+  <p>What it doesn’t: images in the document aren’t loaded, so they print as “[Image not loaded: …]” labels. Mermaid diagrams and math print as their source. If you need those, use one of the tools below.</p>
+<figure class="shot">
+  <picture><source srcset="../img/md-reader.webp" type="image/webp"><img src="../img/md-reader.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown showing a rendered document with a heading outline on the left"></picture>
+  <figcaption>Quire Markdown with its outline of headings.</figcaption>
+</figure>
+<aside class="callout" aria-label="Quire Markdown">
+  <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
+  <div>
+    <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
+    <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
+    <div class="actions">
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="link" href="../#markdown">Details and limits</a>
+    </div>
+  </div>
+</aside>
+
+  <h2>VS Code: the Markdown PDF extension</h2>
+  <p>VS Code has no PDF export built in. The popular <a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf">Markdown PDF</a> extension adds commands such as <strong>Markdown PDF: Export (pdf)</strong> to the Command Palette and the right-click menu. It also exports HTML, PNG and JPEG.</p>
+  <ul>
+    <li>It uses an installed Chrome, Edge or Chromium to make the PDF, and downloads a Chromium build on first use if it finds none.</li>
+    <li>It draws Mermaid diagrams. By default it loads the Mermaid library from a CDN, so that part needs a connection.</li>
+  </ul>
+
+  <h2>Typora</h2>
+  <p><a href="https://support.typora.io/Export/">Typora</a> exports to PDF from <strong>File › Export › PDF</strong>, using its current theme. It can export HTML and images itself, and other formats such as Word through pandoc. Typora costs $14.99 after a 15-day trial.</p>
+
+  <h2>pandoc</h2>
+  <p><a href="https://pandoc.org/MANUAL.html">pandoc</a> is a free command-line converter. The simplest command is:</p>
+  <p><code>pandoc notes.md -o notes.pdf</code></p>
+  <p>By default pandoc makes PDFs through LaTeX, which must be installed separately and produces a typeset, academic look. To use HTML and CSS instead, name an HTML-based engine, for example <code>pandoc notes.md --pdf-engine=weasyprint -o notes.pdf</code> with WeasyPrint installed. pandoc suits scripts and batches; for one file, the options above are quicker.</p>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Can I convert Markdown to PDF without uploading it?</summary><p>Yes. Every method on this page runs on your computer: Chrome’s Save as PDF, VS Code, Typora and pandoc. The one exception is the Markdown PDF extension’s default Mermaid setting, which fetches the Mermaid library (not your document) from a CDN.</p></details>
+    <details><summary>Why are the images missing from my PDF?</summary><p>If you printed from Quire Markdown, that is expected: it never loads images in a document. Use VS Code with the Markdown PDF extension, Typora or pandoc when the PDF needs its pictures.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="markdown-to-html.html">How to convert Markdown to HTML</a></li>
+    <li><a href="markdown-tables.html">How to make and read tables in Markdown</a></li>
+    <li><a href="markdown-code-syntax-highlighting.html">How to get syntax highlighting in Markdown code blocks</a></li>
+    <li><a href="markdown-images-not-showing.html">Why images don’t show in a Markdown preview</a></li>
+    <li><a href="markdown-viewer-vs-editor.html">Markdown viewer or Markdown editor: which do you need?</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>

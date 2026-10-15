@@ -1,0 +1,240 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to preview a README before pushing it to GitHub – Quire</title>
+<meta name="description" content="Check how README.md will look before you push: gh markdown-preview, GitHub&#x27;s Preview tab, VS Code&#x27;s preview or a local viewer, and what each one can miss.">
+<link rel="canonical" href="https://quireapps.com/guides/preview-readme-before-github.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="How to preview a README before pushing it to GitHub – Quire">
+<meta property="og:description" content="Ways to check a README.md before you push it, and what each preview can miss.">
+<meta property="og:url" content="https://quireapps.com/guides/preview-readme-before-github.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to preview a README before pushing it to GitHub – Quire">
+<meta name="twitter:description" content="Ways to check a README.md before you push it, and what each preview can miss.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "@id": "https://quireapps.com/guides/preview-readme-before-github.html#howto",
+      "name": "How to preview a README before pushing it to GitHub",
+      "description": "Render a local README.md with GitHub’s own Markdown API through the gh markdown-preview extension, then check GitHub-only details after pushing.",
+      "dateModified": "2026-10-15",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Install the extension",
+          "text": "With the GitHub CLI installed, run gh extension install yusukebe/gh-markdown-preview.",
+          "url": "https://quireapps.com/guides/preview-readme-before-github.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Start the preview",
+          "text": "In the repository folder, run gh markdown-preview. With no file name it looks for the README in the current directory. It serves the page at localhost:3333.",
+          "url": "https://quireapps.com/guides/preview-readme-before-github.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Edit and watch",
+          "text": "Keep the browser tab open while you edit. Live reload is on by default, so saved changes appear without refreshing.",
+          "url": "https://quireapps.com/guides/preview-readme-before-github.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Check the result on GitHub",
+          "text": "After pushing, open the repository page once to confirm images, relative links and anything GitHub-specific.",
+          "url": "https://quireapps.com/guides/preview-readme-before-github.html#step-4"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "The GitHub CLI (gh)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "A README.md in a local repository"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Preview a README before pushing",
+          "item": "https://quireapps.com/guides/preview-readme-before-github.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">Preview a README before pushing</span></nav>
+  <h1>How to preview a README before pushing it to GitHub</h1>
+<div class="answer">
+    <p><strong>Short answer:</strong> only GitHub renders exactly like GitHub. The closest local preview is a tool that sends your file to GitHub’s own Markdown API, such as the <code>gh markdown-preview</code> extension for the GitHub CLI.</p>
+    <p>For a quick read of structure, tables and code, VS Code’s built-in preview or a viewer extension is enough. Then glance at the pushed page for the GitHub-only parts.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Tool details follow each project’s own documentation.</p>
+
+  <h2>What a local preview can get wrong</h2>
+  <p>GitHub adds things that general Markdown renderers don’t know about:</p>
+  <ul>
+    <li><strong>Relative links and images.</strong> GitHub <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">rewrites relative links</a> to match the branch you are viewing, so <code>docs/setup.md</code> works on any branch.</li>
+    <li><strong>Alerts.</strong> A blockquote starting with <code>[!NOTE]</code>, <code>[!TIP]</code>, <code>[!IMPORTANT]</code>, <code>[!WARNING]</code> or <code>[!CAUTION]</code> becomes a coloured <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">alert</a>. Elsewhere it is usually a plain quote.</li>
+    <li><strong>Diagrams.</strong> GitHub draws <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams">Mermaid, GeoJSON, TopoJSON and ASCII STL</a> code blocks.</li>
+    <li><strong>Which README wins.</strong> If there is more than one, GitHub shows the one in <code>.github</code>, then the root, then <code>docs</code>. Content past 500 KiB is cut off.</li>
+  </ul>
+
+  <h2>Option 1: GitHub’s renderer, on your machine</h2>
+  <p>The <a href="https://github.com/yusukebe/gh-markdown-preview">gh-markdown-preview</a> extension renders the HTML returned by GitHub’s Markdown API and styles it with CSS taken from github.com. Its author describes the result as “almost the same” as GitHub.</p>
+<ol class="steps">
+  <li id="step-1"><strong>Install the extension</strong><p>With the GitHub CLI installed, run <code>gh extension install yusukebe/gh-markdown-preview</code>.</p></li>
+  <li id="step-2"><strong>Start the preview</strong><p>In the repository folder, run <code>gh markdown-preview</code>. With no file name it looks for the README in the current directory. It serves the page at <code>localhost:3333</code>.</p></li>
+  <li id="step-3"><strong>Edit and watch</strong><p>Keep the browser tab open while you edit. Live reload is on by default, so saved changes appear without refreshing.</p></li>
+  <li id="step-4"><strong>Check the result on GitHub</strong><p>After pushing, open the repository page once to confirm images, relative links and anything GitHub-specific.</p></li>
+</ol>
+  <p>Because rendering happens on GitHub’s servers, you need a connection, and your README’s text is sent to GitHub. <a href="https://github.com/joeyespo/grip">Grip</a> (<code>pip install grip</code>, then <code>grip</code>, served at <code>localhost:6419</code>) works the same way and may hit GitHub’s hourly API limit unless you give it credentials.</p>
+
+  <h2>Option 2: the Preview tab on github.com</h2>
+  <p>For a small fix you can skip the local preview. On github.com, open the file, click the pencil icon, make your change and click <strong>Preview</strong> above the text. Nothing is saved until you click <strong>Commit changes</strong>. This is GitHub’s real renderer, but you edit in the browser rather than in your own editor.</p>
+
+  <h2>Option 3: VS Code’s preview</h2>
+  <p>Open the README in VS Code and press <kbd>Ctrl</kbd>+<kbd>K</kbd> then <kbd>V</kbd> (<kbd>⌘</kbd><kbd>K</kbd> <kbd>V</kbd> on a Mac) for a <a href="https://code.visualstudio.com/docs/languages/markdown">preview beside the source</a> that updates as you type. It works offline and draws Mermaid diagrams and math. It is VS Code’s renderer, not GitHub’s, so check alerts and relative links on GitHub afterwards.</p>
+
+  <h2>Option 4: read it in Chrome with Quire Markdown</h2>
+  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> Choose <strong>Open file</strong> and pick the README, then turn on <strong>Follow file</strong>: the rendered page updates each time you save. The heading outline shows at a glance whether your sections are in the order you meant, and tables, task lists and highlighted code look finished.</p>
+<figure class="shot">
+  <picture><source srcset="../img/md-split.webp" type="image/webp"><img src="../img/md-split.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown in the dark theme with the rendered page and Markdown source side by side"></picture>
+  <figcaption>Split view in the dark theme: the rendered page beside the Markdown source.</figcaption>
+</figure>
+  <p>It is a reader, so it deliberately skips some of what GitHub does:</p>
+  <ul>
+    <li>Images show as “[Image not loaded: …]” with their alt text, which at least confirms each one has alt text.</li>
+    <li>Relative links such as <code>docs/setup.md</code> appear as plain text, because there is no repository to resolve them against.</li>
+    <li>Alerts appear as ordinary quotes, footnotes aren’t rendered, and diagrams and math aren’t drawn.</li>
+    <li>It opens UTF-8 files up to 2 MB, and it never changes your file.</li>
+  </ul>
+<aside class="callout" aria-label="Quire Markdown">
+  <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
+  <div>
+    <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
+    <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
+    <div class="actions">
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="link" href="../#markdown">Details and limits</a>
+    </div>
+  </div>
+</aside>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Does GitHub have a preview button for README files?</summary><p>Yes, when you edit a file on github.com. The <strong>Preview</strong> tab sits above the text box. There is no preview for a file that only exists on your computer, which is why local tools exist.</p></details>
+    <details><summary>Will VS Code’s preview match GitHub exactly?</summary><p>Not exactly. Headings, lists, tables and code look much the same, but GitHub-only features such as alerts and branch-aware relative links may not.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="view-markdown-in-chrome.html">How to view Markdown (.md) files in Chrome</a></li>
+    <li><a href="live-preview-markdown-file.html">How to watch a Markdown file update live while it is edited</a></li>
+    <li><a href="markdown-code-syntax-highlighting.html">How to get syntax highlighting in Markdown code blocks</a></li>
+    <li><a href="markdown-images-not-showing.html">Why images don’t show in a Markdown preview</a></li>
+    <li><a href="view-mermaid-diagrams-in-markdown.html">How to view Mermaid diagrams in a Markdown file</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>

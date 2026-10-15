@@ -1,0 +1,218 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EPUB file won’t open? Causes and fixes – Quire</title>
+<meta name="description" content="Why an .epub file won’t open: no reader installed, an .acsm ticket instead of a book, DRM, an interrupted download or a damaged file. How to tell which, and what to do.">
+<link rel="canonical" href="https://quireapps.com/guides/epub-file-wont-open.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="EPUB file won’t open? Causes and fixes – Quire">
+<meta property="og:description" content="Why an .epub file won’t open: no reader, an .acsm ticket, DRM, an interrupted download or a damaged file. How to tell which, and what to do.">
+<meta property="og:url" content="https://quireapps.com/guides/epub-file-wont-open.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EPUB file won’t open? Causes and fixes – Quire">
+<meta name="twitter:description" content="Why an .epub file won’t open: no reader, an .acsm ticket, DRM, an interrupted download or a damaged file. How to tell which, and what to do.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "@id": "https://quireapps.com/guides/epub-file-wont-open.html#howto",
+      "name": "EPUB file won’t open? Common causes and how to fix them",
+      "description": "Work out why an EPUB file won’t open: check for a reader, the real file type, the file size, DRM, and whether the download was complete.",
+      "dateModified": "2026-10-15",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Make sure something can read EPUB",
+          "text": "Windows has no EPUB reader built in, and Chrome downloads .epub files instead of opening them. A Mac has Apple Books. If double-clicking does nothing useful, install a reader first: see the guides for Windows, Mac, Chrome and Chromebook.",
+          "url": "https://quireapps.com/guides/epub-file-wont-open.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Check the real file type",
+          "text": "If the file name ends in .acsm, it isn’t the book. It is a small ticket that Adobe Digital Editions uses to download a DRM-protected book; see how to open an .acsm file. Make sure your computer shows file extensions, so that “book.epub.html” or “book.epub.zip” doesn’t pass for an EPUB.",
+          "url": "https://quireapps.com/guides/epub-file-wont-open.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Look at the file size",
+          "text": "A whole book is usually hundreds of kilobytes or more. A file of a few kilobytes is more likely a ticket, a saved error page or a download that stopped early.",
+          "url": "https://quireapps.com/guides/epub-file-wont-open.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Download it again",
+          "text": "An EPUB is a ZIP archive with the book’s pages inside. If the download was interrupted, the archive is incomplete and readers refuse it. Download the book again from the original page, ideally on a steady connection.",
+          "url": "https://quireapps.com/guides/epub-file-wont-open.html#step-4"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Try a second reader",
+          "text": "Readers differ in how strictly they treat small mistakes in a book’s files. If one reader fails and another opens the same file, the file is fine. calibre and Thorium are free and are good second opinions.",
+          "url": "https://quireapps.com/guides/epub-file-wont-open.html#step-5"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Consider DRM",
+          "text": "calibre’s FAQ puts it plainly: “Most purchased EPUB books have DRM.” A protected book only opens in the app it was sold for, or in Adobe Digital Editions. See DRM-free vs DRM-protected EPUB.",
+          "url": "https://quireapps.com/guides/epub-file-wont-open.html#step-6"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "An EPUB reader app or extension"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EPUB file won’t open",
+          "item": "https://quireapps.com/guides/epub-file-wont-open.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">EPUB file won’t open</span></nav>
+  <h1>EPUB file won’t open? Common causes and how to fix them</h1>
+  <div class="answer">
+<p><strong>Short answer:</strong> most EPUB files that “won’t open” fall into one of five cases. There is no EPUB reader on the computer, the file is really an .acsm ticket, the book has DRM, the download was cut short, or the file itself is faulty.</p>
+    <p>The checks below take a minute each and tell you which one you have.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Quire’s error messages checked in Chrome for Testing 153 on a Mac.</p>
+
+<h2>Work through these checks</h2>
+<ol class="steps">
+  <li id="step-1"><strong>Make sure something can read EPUB</strong><p>Windows has no EPUB reader built in, and Chrome downloads .epub files instead of opening them. A Mac has Apple Books. If double-clicking does nothing useful, install a reader first: see the guides for <a href="open-epub-on-windows.html">Windows</a>, <a href="open-epub-on-mac.html">Mac</a>, <a href="open-epub-in-chrome.html">Chrome</a> and <a href="open-epub-on-chromebook.html">Chromebook</a>.</p></li>
+  <li id="step-2"><strong>Check the real file type</strong><p>If the file name ends in <strong>.acsm</strong>, it isn’t the book. It is a small ticket that Adobe Digital Editions uses to download a DRM-protected book; see <a href="open-acsm-file.html">how to open an .acsm file</a>. Make sure your computer shows file extensions, so that “book.epub.html” or “book.epub.zip” doesn’t pass for an EPUB.</p></li>
+  <li id="step-3"><strong>Look at the file size</strong><p>A whole book is usually hundreds of kilobytes or more. A file of a few kilobytes is more likely a ticket, a saved error page or a download that stopped early.</p></li>
+  <li id="step-4"><strong>Download it again</strong><p>An EPUB is a ZIP archive with the book’s pages inside. If the download was interrupted, the archive is incomplete and readers refuse it. Download the book again from the original page, ideally on a steady connection.</p></li>
+  <li id="step-5"><strong>Try a second reader</strong><p>Readers differ in how strictly they treat small mistakes in a book’s files. If one reader fails and another opens the same file, the file is fine. calibre and Thorium are free and are good second opinions.</p></li>
+  <li id="step-6"><strong>Consider DRM</strong><p>calibre’s FAQ puts it plainly: “Most purchased EPUB books have DRM.” A protected book only opens in the app it was sold for, or in Adobe Digital Editions. See <a href="drm-free-vs-drm-epub.html">DRM-free vs DRM-protected EPUB</a>.</p></li>
+</ol>
+
+  <h2>What Quire EPUB Reader’s messages mean</h2>
+  <p>If you use Quire, our Chrome extension, it tells you which problem it found instead of showing a blank page. A file that fails is not added to your library.</p>
+  <ul>
+    <li><strong>“This is not an EPUB file”.</strong> The file isn’t a ZIP archive at all. It may be a web page, a different format, or an .acsm ticket. We dropped an .acsm file onto the library to check, and this is the message it gave.</li>
+    <li><strong>“This EPUB file is damaged”.</strong> The archive is incomplete, usually because the download was cut short. Download it again. A copy of a book cut off at 40% of its size gave this message in our test.</li>
+    <li><strong>“This EPUB could not be opened”.</strong> The archive is intact but required parts of the book are missing. Try another reader, or another copy of the book.</li>
+    <li><strong>“This file is empty”.</strong> The download finished with no data. The link may have expired, or needed you to sign in.</li>
+    <li><strong>“The server answered 403” (or 401).</strong> The site refused the download. Sign in on that site, then click the link again. <strong>404</strong> means the book is no longer at that address.</li>
+    <li><strong>The book opens, but the text is scrambled characters.</strong> This is very likely DRM. We built a test file that imitates Adobe’s encryption: Quire opened it and showed the title, then strings of random symbols instead of the text. Quire can’t open DRM-protected books, so read it in the store’s app and remove it from your library with the trash button on its cover.</li>
+  </ul>
+
+  <h2>If the book is free and none of this helps</h2>
+  <p>Look for another copy. Public-domain classics are available from more than one source, and <a href="free-drm-free-epub-books.html">Project Gutenberg and Standard Ebooks</a> both offer DRM-free EPUB files that open in any reader.</p>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="drm-free-vs-drm-epub.html">DRM-free vs DRM-protected EPUB</a></li>
+    <li><a href="open-acsm-file.html">How to open an .acsm file</a></li>
+    <li><a href="open-epub-in-chrome.html">How to open EPUB files in Chrome</a></li>
+    <li><a href="open-epub-on-windows.html">How to open EPUB files on Windows 11 and 10</a></li>
+    <li><a href="free-drm-free-epub-books.html">Where to download free, DRM-free EPUB books</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>

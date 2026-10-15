@@ -1,0 +1,237 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to get syntax highlighting in Markdown code blocks – Quire</title>
+<meta name="description" content="Add a language name after the opening backticks to get syntax highlighting in a Markdown code block. Which names work, why some blocks stay plain, and how viewers differ.">
+<link rel="canonical" href="https://quireapps.com/guides/markdown-code-syntax-highlighting.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="How to get syntax highlighting in Markdown code blocks – Quire">
+<meta property="og:description" content="How the language label on a fenced code block turns on syntax highlighting, and why some blocks stay plain.">
+<meta property="og:url" content="https://quireapps.com/guides/markdown-code-syntax-highlighting.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to get syntax highlighting in Markdown code blocks – Quire">
+<meta name="twitter:description" content="How the language label on a fenced code block turns on syntax highlighting, and why some blocks stay plain.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "@id": "https://quireapps.com/guides/markdown-code-syntax-highlighting.html#howto",
+      "name": "How to get syntax highlighting in Markdown code blocks",
+      "description": "Write a fenced code block with a language identifier so Markdown renderers highlight it.",
+      "dateModified": "2026-10-15",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Open a fence",
+          "text": "Start a line with three backticks (```) or three tildes (~~~).",
+          "url": "https://quireapps.com/guides/markdown-code-syntax-highlighting.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Name the language",
+          "text": "Right after the fence, with no space needed, write the language: ```python, ```js, ```bash. Use lowercase.",
+          "url": "https://quireapps.com/guides/markdown-code-syntax-highlighting.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Paste the code",
+          "text": "Put the code on the following lines, unchanged.",
+          "url": "https://quireapps.com/guides/markdown-code-syntax-highlighting.html#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Close the fence",
+          "text": "End with a line of the same characters, at least as many as you opened with.",
+          "url": "https://quireapps.com/guides/markdown-code-syntax-highlighting.html#step-4"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "A text editor"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "A Markdown renderer that highlights code"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Syntax highlighting in Markdown",
+          "item": "https://quireapps.com/guides/markdown-code-syntax-highlighting.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">Syntax highlighting in Markdown</span></nav>
+  <h1>How to get syntax highlighting in Markdown code blocks</h1>
+<div class="answer">
+    <p><strong>Short answer:</strong> use a fenced code block and put the language name straight after the opening backticks, for example <code>```python</code>. Without that label, many renderers show the code plain.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Syntax follows the <a href="https://spec.commonmark.org/0.31.2/">CommonMark spec</a> and <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks">GitHub’s documentation</a>; Quire details come from its source code.</p>
+
+  <h2>Write a highlighted block</h2>
+<ol class="steps">
+  <li id="step-1"><strong>Open a fence</strong><p>Start a line with three backticks (<code>```</code>) or three tildes (<code>~~~</code>).</p></li>
+  <li id="step-2"><strong>Name the language</strong><p>Right after the fence, with no space needed, write the language: <code>```python</code>, <code>```js</code>, <code>```bash</code>. Use lowercase.</p></li>
+  <li id="step-3"><strong>Paste the code</strong><p>Put the code on the following lines, unchanged.</p></li>
+  <li id="step-4"><strong>Close the fence</strong><p>End with a line of the same characters, at least as many as you opened with.</p></li>
+</ol>
+  <p>In CommonMark the text after the opening fence is called the <em>info string</em>. Its first word is, by convention, the language. Markdown doesn’t define the list of names; each renderer decides which it knows.</p>
+
+  <h2>Which language names work</h2>
+  <ul>
+    <li><strong>GitHub</strong> uses Linguist to pick grammars; the names and aliases in Linguist’s <code>languages.yml</code> are the valid ones. GitHub recommends lowercase names if the file will also be published with GitHub Pages.</li>
+    <li><strong>Other tools</strong> use their own highlighter and their own list. Common names such as <code>js</code>, <code>ts</code>, <code>python</code>, <code>bash</code>, <code>json</code>, <code>yaml</code>, <code>html</code>, <code>css</code>, <code>sql</code> and <code>diff</code> work almost everywhere. Rarer ones vary.</li>
+  </ul>
+
+  <h2>Why a block stays plain</h2>
+  <ul>
+    <li><strong>No label.</strong> Some renderers guess; many, including Quire, don’t.</li>
+    <li><strong>An indented code block.</strong> Code indented by four spaces is a code block too, but it has no info string, so there is nowhere to name the language.</li>
+    <li><strong>An unknown name.</strong> A typo, or a language the renderer doesn’t bundle, falls back to plain text.</li>
+    <li><strong>A diagram fence.</strong> <code>```mermaid</code> is drawn as a diagram by GitHub and some editors, and shown as code elsewhere. See <a href="view-mermaid-diagrams-in-markdown.html">viewing Mermaid diagrams</a>.</li>
+  </ul>
+  <p>To show a fence inside a code block, as in a Markdown tutorial, wrap the outer block in four backticks.</p>
+
+  <h2>Highlighted code in Chrome</h2>
+  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> It highlights fenced code labelled with one of these languages, or a common alias for one: Bash, C, C++, C#, CSS, diff, Go, GraphQL, INI and TOML, Java, JavaScript, JSON, Kotlin, Less, Lua, Makefile, Markdown, Objective-C, Perl, PHP, Python, R, Ruby, Rust, SCSS, shell sessions, SQL, Swift, TypeScript, VB.NET, WebAssembly, XML and HTML, and YAML.</p>
+<figure class="shot">
+  <picture><source srcset="../img/md-reader.webp" type="image/webp"><img src="../img/md-reader.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown showing a rendered document with a heading outline on the left"></picture>
+  <figcaption>Quire Markdown with its outline of headings.</figcaption>
+</figure>
+  <ul>
+    <li>Every code block gets a <strong>Copy</strong> button.</li>
+    <li>Code it doesn’t know, unlabelled code, and any block over 50,000 characters stay readable as plain text.</li>
+    <li>Highlighting works in the light and dark themes. A downloaded HTML copy keeps the code’s shading but not its colours.</li>
+    <li>It is a viewer, not an editor, for UTF-8 files up to 2 MB.</li>
+  </ul>
+<aside class="callout" aria-label="Quire Markdown">
+  <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
+  <div>
+    <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
+    <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
+    <div class="actions">
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="link" href="../#markdown">Details and limits</a>
+    </div>
+  </div>
+</aside>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Should I write ```js or ```javascript?</summary><p>Both work in most renderers, including GitHub and Quire. Pick one and use it throughout your documents.</p></details>
+    <details><summary>Can I highlight inline code?</summary><p>Standard Markdown has no way to name a language for inline <code>`code`</code>. Some tools add their own syntax for it, which won’t carry over to others.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="markdown-tables.html">How to make and read tables in Markdown</a></li>
+    <li><a href="preview-readme-before-github.html">How to preview a README before pushing it to GitHub</a></li>
+    <li><a href="view-mermaid-diagrams-in-markdown.html">How to view Mermaid diagrams in a Markdown file</a></li>
+    <li><a href="what-is-an-md-file.html">What is an .md file?</a></li>
+    <li><a href="markdown-to-html.html">How to convert Markdown to HTML</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>

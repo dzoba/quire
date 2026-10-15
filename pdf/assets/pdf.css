@@ -1,0 +1,34 @@
+/* Quire PDF web tool: additions on top of the hub's style.css. */
+.pdf-hero{padding:48px 0 28px}
+.pdf-hero>*{max-width:860px}
+.pdf-hero h1{font-size:clamp(34px,4.2vw,54px);margin-bottom:20px}
+.pdf-hero .lede{font-size:19px;margin-bottom:12px;max-width:44em}
+.pdf-ext{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px;color:var(--muted);margin:18px 0 0}
+.pdf-ext img{width:24px;height:24px}
+.pdf-ext a{color:var(--ink);font-weight:600}
+.nav a[aria-current]{color:var(--ink);font-weight:600}
+.pdf-tool{width:min(1400px,100% - 32px);margin:0 auto 56px}
+.pdf-tool-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 4px 10px;font-size:14px;color:var(--muted)}
+.pdf-lock::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#2f9a5a;margin-right:8px;vertical-align:1px}
+.pdf-full{white-space:nowrap;font:600 14px/1 var(--sans);color:var(--ink);background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer}
+.pdf-full:hover{border-color:var(--muted)}
+#quireFrame{display:block;width:100%;height:min(86vh,900px);min-height:560px;border:1px solid var(--line);border-radius:14px;background:#e7edf4;box-shadow:var(--shadow)}
+#quireFrame:fullscreen{border:0;border-radius:0}
+.pdf-page.dragging #quireFrame{outline:4px dashed var(--accent);outline-offset:4px}
+.pdf-noscript{padding:20px;background:var(--shell);border-radius:12px}
+.pdf-steps .steps{max-width:760px}
+.pdf-steps .steps>li{counter-increment:step;position:relative;padding:0 0 0 46px;margin:0 0 16px}
+.pdf-steps .steps>li p{margin:3px 0 0}
+.foot .pdf-foot{grid-template-columns:1.6fr 1fr 1fr}
+.foot .pdf-foot small a{text-decoration:underline}
+.notices{white-space:pre-wrap;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--shell);padding:20px;border-radius:12px;overflow-wrap:anywhere}
+@media (max-width:980px){.foot .pdf-foot{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){
+  .pdf-hero{padding:32px 0 20px}
+  .pdf-hero .lede{font-size:17px}
+  .pdf-tool{width:100%}
+  .pdf-tool-bar{padding:0 18px 10px}
+  #quireFrame{border-radius:0;border-left:0;border-right:0;height:80vh;min-height:480px}
+  .nav{gap:12px;font-size:13px;flex-wrap:wrap;justify-content:flex-end}
+  .foot .pdf-foot{grid-template-columns:1fr}
+}

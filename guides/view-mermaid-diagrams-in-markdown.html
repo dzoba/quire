@@ -1,0 +1,225 @@
+<!doctype html>
+<!-- Quire how-to guide. Static; no scripts beyond JSON-LD, no external fonts, CDNs or analytics. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to view Mermaid diagrams in a Markdown file – Quire</title>
+<meta name="description" content="A mermaid code block only becomes a diagram in tools that support it. Where Mermaid renders (GitHub, VS Code, Obsidian, Typora) and why some viewers show code.">
+<link rel="canonical" href="https://quireapps.com/guides/view-mermaid-diagrams-in-markdown.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Quire">
+<meta property="og:title" content="How to view Mermaid diagrams in a Markdown file – Quire">
+<meta property="og:description" content="Where Mermaid code blocks in Markdown are drawn as diagrams, and why some viewers show the code instead.">
+<meta property="og:url" content="https://quireapps.com/guides/view-mermaid-diagrams-in-markdown.html">
+<meta property="og:image" content="https://quireapps.com/img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to view Mermaid diagrams in a Markdown file – Quire">
+<meta name="twitter:description" content="Where Mermaid code blocks in Markdown are drawn as diagrams, and why some viewers show the code instead.">
+<meta name="twitter:image" content="https://quireapps.com/img/og.png">
+<meta name="twitter:image:alt" content="The Quire wordmark beside the EPUB, PDF and Markdown readers">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      "@id": "https://quireapps.com/guides/view-mermaid-diagrams-in-markdown.html#howto",
+      "name": "How to view Mermaid diagrams in a Markdown file",
+      "description": "View a Mermaid diagram written in a Markdown code block.",
+      "dateModified": "2026-10-15",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Check the fence",
+          "text": "The diagram must be in a fenced code block labelled mermaid: a line with ```mermaid, the diagram source, then ```.",
+          "url": "https://quireapps.com/guides/view-mermaid-diagrams-in-markdown.html#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Open it in a tool that draws Mermaid",
+          "text": "Push the file to GitHub, or open it in VS Code and press Ctrl+Shift+V (⇧⌘V on a Mac).",
+          "url": "https://quireapps.com/guides/view-mermaid-diagrams-in-markdown.html#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Debug a single diagram",
+          "text": "If it still shows as code or as an error, paste the block’s contents into the Mermaid Live Editor at mermaid.live to see the error message.",
+          "url": "https://quireapps.com/guides/view-mermaid-diagrams-in-markdown.html#step-3"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "A Markdown file with a mermaid code block"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "A Mermaid-capable renderer such as GitHub or VS Code"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Quire",
+          "item": "https://quireapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://quireapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "View Mermaid diagrams in Markdown",
+          "item": "https://quireapps.com/guides/view-mermaid-diagrams-in-markdown.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
+  <nav class="nav" aria-label="Main">
+    <a href="../#readers">Readers</a>
+    <a href="./">Guides</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap legal guide">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">View Mermaid diagrams in Markdown</span></nav>
+  <h1>How to view Mermaid diagrams in a Markdown file</h1>
+<div class="answer">
+    <p><strong>Short answer:</strong> Mermaid diagrams are text inside a code block labelled <code>mermaid</code>. Markdown itself doesn’t draw them; the tool showing the file has to. GitHub, VS Code’s built-in preview, Obsidian and Typora draw them. Many other viewers, ours included, show the code instead.</p>
+  </div>
+  <p class="updated">Updated 15 October 2026. Support details follow each tool’s documentation.</p>
+
+  <h2>View a diagram</h2>
+<ol class="steps">
+  <li id="step-1"><strong>Check the fence</strong><p>The diagram must be in a fenced code block labelled <code>mermaid</code>: a line with <code>```mermaid</code>, the diagram source, then <code>```</code>.</p></li>
+  <li id="step-2"><strong>Open it in a tool that draws Mermaid</strong><p>Push the file to GitHub, or open it in VS Code and press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd> on a Mac).</p></li>
+  <li id="step-3"><strong>Debug a single diagram</strong><p>If it still shows as code or as an error, paste the block’s contents into the Mermaid Live Editor at mermaid.live to see the error message.</p></li>
+</ol>
+
+  <h2>Where Mermaid is drawn</h2>
+  <ul>
+    <li><strong>GitHub</strong> draws <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams">Mermaid</a>, along with GeoJSON, TopoJSON and ASCII STL blocks, in Markdown files.</li>
+    <li><strong>VS Code.</strong> Its <a href="https://code.visualstudio.com/docs/languages/markdown">built-in Markdown preview</a> draws <code>mermaid</code> blocks, with no extension needed.</li>
+    <li><strong>Obsidian</strong> draws them too (<a href="https://obsidian.md/help/Editing+and+formatting/Advanced+formatting+syntax">Obsidian help</a>).</li>
+    <li><strong>Typora</strong> draws <a href="https://typora.io/">Mermaid flowcharts, sequence diagrams, Gantt charts and more</a> as you type.</li>
+    <li><strong><a href="https://mermaid.live/">Mermaid Live Editor</a></strong> shows one diagram at a time as you edit it in the browser, which is handy for fixing a diagram that won’t render.</li>
+  </ul>
+  <p>For PDFs, the <a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf">Markdown PDF</a> extension for VS Code draws Mermaid blocks during export; by default it loads the Mermaid library from a CDN.</p>
+
+  <h2>Why it shows as code</h2>
+  <ul>
+    <li><strong>The tool doesn’t support Mermaid.</strong> Then the block falls back to an ordinary code block. Your diagram isn’t broken; it just isn’t drawn there.</li>
+    <li><strong>The label is wrong.</strong> It must be exactly <code>mermaid</code> after the opening fence.</li>
+    <li><strong>The diagram has an error.</strong> Supporting tools usually show an error message rather than the code. Test it in Mermaid Live.</li>
+  </ul>
+
+  <h2>Quire Markdown doesn’t draw diagrams</h2>
+  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> We want to be clear about this one: it doesn’t render Mermaid or other diagrams, or math. A <code>mermaid</code> block appears as its source in a code block, with a <strong>Copy</strong> button, so you can paste it into Mermaid Live.</p>
+  <p>It is still useful for reading everything around the diagram: the heading outline, find, tables, task lists and highlighted code, in a viewer that never changes your file. It opens UTF-8 files up to 2 MB, and images appear as blocked references. If your document is mostly diagrams, use GitHub or VS Code instead.</p>
+<figure class="shot">
+  <picture><source srcset="../img/md-reader.webp" type="image/webp"><img src="../img/md-reader.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown showing a rendered document with a heading outline on the left"></picture>
+  <figcaption>Quire Markdown with its outline of headings.</figcaption>
+</figure>
+<aside class="callout" aria-label="Quire Markdown">
+  <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
+  <div>
+    <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
+    <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
+    <div class="actions">
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="link" href="../#markdown">Details and limits</a>
+    </div>
+  </div>
+</aside>
+
+  <h2>Questions</h2>
+  <div class="faq-list">
+    <details><summary>Does Chrome draw Mermaid diagrams in .md files?</summary><p>No. Chrome shows a .md file as plain text, so a Mermaid block is just text. You need a tool that renders Markdown and supports Mermaid.</p></details>
+    <details><summary>Is Mermaid part of Markdown?</summary><p>No. It is a separate diagram language. Markdown only carries it inside a code block, and each tool decides whether to draw it.</p></details>
+  </div>
+
+  <h2>More guides</h2>
+  <ul class="related">
+    <li><a href="markdown-code-syntax-highlighting.html">How to get syntax highlighting in Markdown code blocks</a></li>
+    <li><a href="preview-readme-before-github.html">How to preview a README before pushing it to GitHub</a></li>
+    <li><a href="markdown-viewer-vs-editor.html">Markdown viewer or Markdown editor: which do you need?</a></li>
+    <li><a href="markdown-to-pdf.html">How to print a Markdown file or save it as a PDF</a></li>
+    <li><a href="view-markdown-in-chrome.html">How to view Markdown (.md) files in Chrome</a></li>
+  </ul>
+  <p><a href="./">All guides</a> · <a href="../">Quire homepage</a></p>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Focused, private readers for Chrome.</p>
+    <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
+  </div>
+  <div>
+    <h4>Readers</h4>
+    <ul>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/">Markdown – Viewer</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Guides</h4>
+    <ul>
+      <li><a href="./">All guides</a></li>
+      <li><a href="open-epub-in-chrome.html">EPUB in Chrome</a></li>
+      <li><a href="fill-pdf-form-in-chrome.html">Fill a PDF form</a></li>
+      <li><a href="view-markdown-in-chrome.html">View Markdown</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Privacy</h4>
+    <ul>
+      <li><a href="../privacy.html">Privacy overview</a></li>
+      <li><a href="https://dzoba.github.io/quire-epub-reader/privacy.html">EPUB Reader policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-pdf/privacy.html">PDF policy</a></li>
+      <li><a href="https://dzoba.github.io/quire-markdown/privacy.html">Markdown policy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Support</h4>
+    <ul>
+      <li><a href="https://github.com/dzoba/quire-epub-reader/issues">EPUB Reader issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-pdf/issues">PDF issues</a></li>
+      <li><a href="https://github.com/dzoba/quire-markdown/issues">Markdown issues</a></li>
+    </ul>
+  </div>
+</div></footer>
+</body>
+</html>
