@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
-<title>Third-party notices – Quire PDF</title><meta name="robots" content="noindex">
+<title>Third-party notices | Quire PDF</title><meta name="robots" content="noindex">
 <link rel="stylesheet" href="assets/style.css?v=1"></head>
 <body><main class="wrap legal"><p class="crumbs"><a href="./">Quire PDF</a></p><h1>Third-party notices</h1>
 <pre class="notices"># Third-party software in Quire PDF for the web
@@ -24,6 +24,22 @@ Changes made for the web version:
 - The &quot;Uploading file…&quot; label and the signature-image error that mentions the network connection are reworded in English and removed from other locales, which then fall back to English.
 - The scripting sandbox (`pdf.sandbox.mjs`, `quickjs-eval.*`) is not shipped, because PDF scripts are disabled.
 
+## pdf-lib
+
+The single-task tool pages (compress, split, extract pages, rotate, PDF to JPG, JPG to PDF) also bundle pdf-lib 1.17.1 by Andrew Dillon, licensed under the MIT License. The file is `assets/vendor/pdf-lib/pdf-lib.esm.min.js` from the npm package `pdf-lib@1.17.1` (tarball SHA-256 a7cc1eaf12e41e612a7be581162a63b18118aefc01e90f6a1f35347b1f324a1c). The only change is that the final `//# sourceMappingURL` comment was removed, because the source map is not shipped. SHA-256 of the shipped file: a4eb247afbb2d445e4b0e2ed1e4bee9dd8c7f3a26f5965b9e11afb615d4c53f5.
+
+Source: https://github.com/Hopding/pdf-lib/tree/v1.17.1
+
+That build includes these packages, each under its own license, kept beside it in `assets/vendor/pdf-lib/`:
+
+- pdf-lib 1.17.1, MIT (`LICENSE-pdf-lib.md`)
+- pako 1.0.11 by Vitaly Puzrin and Andrei Tuputcyn, MIT (`LICENSE-pako.txt`)
+- @pdf-lib/upng 1.0.1, a fork of UPNG.js by Photopea, MIT (`LICENSE-upng.txt`)
+- @pdf-lib/standard-fonts 1.0.0, MIT (`LICENSE-standard-fonts.md`)
+- tslib 1.14.1 by Microsoft, 0BSD (`LICENSE-tslib.txt`)
+
+## PDF.js license files
+
 These license files are kept beside their components:
 
 - `app/pdfjs/LICENSE`
@@ -35,4 +51,5 @@ These license files are kept beside their components:
 
 Source maps, debugger tooling and the upstream TraceMonkey sample PDF are not included. Fonts, CMaps, color profiles, WASM and fallback code, locales, images and licenses are all served from the same site. No remotely hosted code is used.
 </pre>
-<p><a href="app/pdfjs/LICENSE">PDF.js license (Apache License 2.0)</a></p></main></body></html>
+<p><a href="app/pdfjs/LICENSE">PDF.js license (Apache License 2.0)</a></p>
+<p><a href="assets/vendor/pdf-lib/LICENSE-pdf-lib.md">pdf-lib license (MIT)</a>, <a href="assets/vendor/pdf-lib/LICENSE-pako.txt">pako (MIT)</a>, <a href="assets/vendor/pdf-lib/LICENSE-upng.txt">UPNG.js (MIT)</a>, <a href="assets/vendor/pdf-lib/LICENSE-standard-fonts.md">@pdf-lib/standard-fonts (MIT)</a>, <a href="assets/vendor/pdf-lib/LICENSE-tslib.txt">tslib (0BSD)</a></p></main></body></html>

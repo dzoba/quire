@@ -19,9 +19,14 @@
 .pdf-steps .steps{max-width:760px}
 .pdf-steps .steps>li{counter-increment:step;position:relative;padding:0 0 0 46px;margin:0 0 16px}
 .pdf-steps .steps>li p{margin:3px 0 0}
-.foot .pdf-foot{grid-template-columns:1.6fr 1fr 1fr}
+.foot .pdf-foot{grid-template-columns:1.6fr 1fr 1fr 1fr}
 .foot .pdf-foot small a{text-decoration:underline}
 .notices{white-space:pre-wrap;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--shell);padding:20px;border-radius:12px;overflow-wrap:anywhere}
+.more-tools .tool-links{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.more-tools .tool-links a{display:block;height:100%;box-sizing:border-box;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--sheet);text-decoration:none;color:var(--ink)}
+.more-tools .tool-links a:hover{border-color:var(--muted)}
+.more-tools .tool-links strong{display:block}
+.more-tools .tool-links span{color:var(--muted);font-size:15px}
 @media (max-width:980px){.foot .pdf-foot{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){
   .pdf-hero{padding:32px 0 20px}
@@ -30,5 +35,7 @@
   .pdf-tool-bar{padding:0 18px 10px}
   #quireFrame{border-radius:0;border-left:0;border-right:0;height:80vh;min-height:480px}
   .nav{gap:12px;font-size:13px;flex-wrap:wrap;justify-content:flex-end}
+  .nav a:not(.nav-all){display:none}
+  .nav .nav-all{font-size:15px;color:var(--ink);font-weight:600}
   .foot .pdf-foot{grid-template-columns:1fr}
 }

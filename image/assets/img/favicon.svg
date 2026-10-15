@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Quire</title>
+  <rect width="64" height="64" rx="14" fill="#23384d"/>
+  <path d="M24.5 11.5 46.8 9.2c1.2-.1 2.2.7 2.3 1.9l3 29.4c.1 1.2-.7 2.2-1.9 2.3L28 45.1z" fill="#8fa9d8"/>
+  <path d="M19.4 14.3h23.5c1.2 0 2.1.9 2.1 2.1v31.3c0 1.2-.9 2.1-2.1 2.1H19.4z" fill="#e8dfcb" transform="rotate(-4 32 32)"/>
+  <rect x="14" y="17" width="27" height="36" rx="2.2" fill="#faf6ec"/>
+  <path d="M19 24h10M19 29h11M19 34h9M19 41h16M19 46h12" stroke="#23384d" stroke-opacity=".38" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M33.5 17h5.5v20.5l-2.75-2.6-2.75 2.6z" fill="#d9603f"/>
+</svg>

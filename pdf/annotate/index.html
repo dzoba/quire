@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; frame-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Annotate a PDF online: highlight, comment and draw – Quire PDF</title>
-<meta name="description" content="Highlight text, add notes and text boxes, draw and place images on a PDF in your browser. Free, and the file is never uploaded.">
+<title>Annotate a PDF online: highlight, comment and draw | Quire PDF</title>
+<meta name="description" content="Highlight text, add notes and text boxes, draw and place images on a PDF in your browser. Free, and the file stays on your device.">
 <link rel="canonical" href="https://quireapps.com/pdf/annotate/">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#11181f" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Quire">
-<meta property="og:title" content="Annotate a PDF online: highlight, comment and draw">
-<meta property="og:description" content="Highlight text, add notes and text boxes, draw and place images on a PDF in your browser. Free, and the file is never uploaded.">
+<meta property="og:title" content="Annotate a PDF: highlight, add notes and draw">
+<meta property="og:description" content="Highlight text, add notes and text boxes, draw and place images on a PDF in your browser. Free, and the file stays on your device.">
 <meta property="og:url" content="https://quireapps.com/pdf/annotate/">
 <meta property="og:image" content="https://quireapps.com/pdf/assets/og.png">
 <meta property="og:image:type" content="image/png">
@@ -23,21 +23,22 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Quire PDF editor with a document open, next to the line: your PDF never leaves your browser">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Annotate a PDF online: highlight, comment and draw">
-<meta name="twitter:description" content="Highlight text, add notes and text boxes, draw and place images on a PDF in your browser. Free, and the file is never uploaded.">
+<meta name="twitter:title" content="Annotate a PDF: highlight, add notes and draw">
+<meta name="twitter:description" content="Highlight text, add notes and text boxes, draw and place images on a PDF in your browser. Free, and the file stays on your device.">
 <meta name="twitter:image" content="https://quireapps.com/pdf/assets/og.png">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="../assets/style.css?v=1">
 <link rel="stylesheet" href="../assets/pdf.css?v=1">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Quire PDF",
   "url": "https://quireapps.com/pdf/annotate/",
-  "description": "Highlight text, add notes and text boxes, draw and place images on a PDF in your browser. Free, and the file is never uploaded.",
+  "description": "Highlight text, add notes and text boxes, draw and place images on a PDF in your browser. Free, and the file stays on your device.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any (runs in a web browser)",
   "browserRequirements": "Requires a modern browser with JavaScript enabled.",
@@ -67,7 +68,7 @@
 <script src="../assets/page.js?v=1" defer></script>
 </head>
 <body class="pdf-page" data-page="annotate">
-<a class="skip" href="#tool">Skip to the PDF tool</a>
+<a class="skip" href="#tool">Skip to the tool</a>
 
 <header class="top"><div class="wrap">
   <a class="brand" href="../../" aria-label="Quire home"><img src="../assets/img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
@@ -76,21 +77,24 @@
       <a href="../fill/">Fill a PDF form</a>
       <a href="../merge/">Merge PDFs</a>
       <a aria-current="page">Annotate a PDF</a>
+      <a href="../compress/">Compress PDF</a>
+      <a href="../split/">Split PDF</a>
+      <a class="nav-all" href="#pdf-tools">All PDF tools</a>
   </nav>
 </div></header>
 
 <main id="main">
 <section class="wrap pdf-hero">
-  <p class="eyebrow">Free · No upload · No account</p>
-  <h1>Annotate a PDF online: highlight, comment and draw</h1>
-  <p class="lede">Open a PDF below to highlight passages, leave notes, add text boxes, draw freehand and place images. Annotations are saved as standard PDF annotations, so they show up in other PDF readers too.</p>
-  <p class="lede">The PDF is processed in your browser and never uploaded.</p>
+  <p class="eyebrow">Free, in your browser, with no account</p>
+  <h1>Annotate a PDF: highlight, add notes and draw</h1>
+  <p class="lede">Open a PDF below to highlight passages, leave notes, add text boxes, draw freehand and place images. Quire saves these as standard PDF annotations, so other PDF readers show them too.</p>
+  <p class="lede">Your browser processes the PDF, and it is never uploaded.</p>
   <p class="pdf-ext"><img src="../assets/img/logo-pdf.png" alt="" width="24" height="24">Prefer it in Chrome? <a href="https://chromewebstore.google.com/detail/iofhhdjmlnhmdmnoipmbkloakhakimbk" rel="noopener">Install the Quire PDF extension</a></p>
 </section>
 
 <section class="pdf-tool" id="tool" aria-label="PDF editor">
   <div class="pdf-tool-bar">
-    <span class="pdf-lock">Your PDF is processed on this device and never uploaded.</span>
+    <span class="pdf-lock">This tool opens your PDF on this device and never uploads it.</span>
     <button type="button" class="pdf-full" id="fullscreen" hidden>Full screen</button>
   </div>
   <iframe id="quireFrame" src="../app/pdfjs/web/viewer.html" title="Quire PDF editor" allowfullscreen></iframe>
@@ -107,30 +111,54 @@
   </ol>
 </div></section>
 <section class="section" id="faq"><div class="wrap faq">
-  <div class="section-head"><p class="eyebrow">Questions</p><h2>Plain answers</h2><p>What this tool does, and what it does not.</p></div>
+  <div class="section-head"><p class="eyebrow">Questions</p><h2>Questions and limits</h2><p>What this tool does and what it can't do.</p></div>
   <div>
-    <details><summary>Will my highlights show up in other PDF apps?</summary><p>Yes. Highlights, notes, text boxes, drawings and images are written into the saved PDF as standard annotations, which Acrobat, Preview and browser PDF viewers display.</p></details>
+    <details><summary>Will my highlights show up in other PDF apps?</summary><p>Yes. Quire writes highlights, notes, text boxes, drawings and images into the saved PDF as standard annotations, which Acrobat, Preview and browser PDF viewers display.</p></details>
     <details><summary>Can I highlight a scanned PDF?</summary><p>You can draw on it and add notes and text boxes, but text highlighting needs real text in the PDF. Quire does not run OCR, so a scanned page has no selectable text.</p></details>
-    <details><summary>Is my PDF uploaded anywhere?</summary><p>No. The page and its PDF engine (Mozilla’s PDF.js) load from quireapps.com, and after that your file is opened, edited and saved inside your browser tab. The file is never sent to a server, and there is no analytics or tracking on this page. You can check this yourself in your browser’s developer tools under Network.</p></details>
-    <details><summary>Is it free? Do I need an account?</summary><p>It is free, with no account, no sign-up, no watermark and no daily limit. Files can be up to 100 MB.</p></details>
-    <details><summary>Does Quire keep a copy of my file?</summary><p>No. The document exists only in the open tab. If you close or reload the tab, unsaved edits are gone, so use Save a copy when you are done. The only things the page stores in your browser are your light or dark theme choice and, if you tick “Save signature”, the signatures you chose to reuse.</p></details>
-    <details><summary>Can I change the existing text in a PDF?</summary><p>No. Quire adds things on top of the page: highlights, notes, new text boxes, drawings, images and signatures. It does not rewrite text that is already in the PDF.</p></details>
-    <details><summary>Which browsers does it work in?</summary><p>It is tested in Chromium-based browsers such as Chrome and Edge. It is built on PDF.js, which also runs in current Firefox and Safari, but those have had less testing here. In Chrome and Edge, Save a copy lets you pick where the file goes; in other browsers it downloads.</p></details>
+    <details><summary>Is my PDF uploaded anywhere?</summary><p>No. The page and its PDF engine (Mozilla's PDF.js) load from quireapps.com. After that, your browser opens, edits and saves the file inside this tab and never sends it to a server. The page has no analytics or tracking. To check, open your browser's developer tools and watch the Network tab.</p></details>
+    <details><summary>Is it free? Do I need an account?</summary><p>It is free, and you don't need an account. The tool adds no watermark and has no daily limit. Files can be up to 100 MB.</p></details>
+    <details><summary>Does Quire keep a copy of my file?</summary><p>No. The document exists only in the open tab. If you close or reload the tab, you lose any unsaved edits, so select Save a copy when you are done. The page stores two things in your browser: your light or dark theme choice and, if you tick &quot;Save signature&quot;, the signatures you chose to reuse.</p></details>
+    <details><summary>Can I change the existing text in a PDF?</summary><p>No. Quire adds highlights, notes, new text boxes, drawings, images and signatures on top of the page. It does not rewrite text that is already in the PDF.</p></details>
+    <details><summary>Which browsers does it work in?</summary><p>Testing covers Chromium-based browsers such as Chrome and Edge. PDF.js, the engine underneath, also runs in current Firefox and Safari, but those have had less testing here. In Chrome and Edge, Save a copy lets you pick where the file goes. Other browsers download it.</p></details>
   </div>
+</div></section>
+<section class="section more-tools" id="pdf-tools" aria-labelledby="pdfToolsHeading"><div class="wrap">
+  <div class="section-head"><h2 id="pdfToolsHeading">Other free PDF tools</h2><p>Each one runs in your browser, and your files stay on your device.</p></div>
+  <ul class="tool-links">
+    <li><a href="../"><strong>PDF editor</strong><span>Sign, fill, annotate and reorder pages in one place.</span></a></li>
+    <li><a href="../sign/"><strong>Sign a PDF</strong><span>Type or draw a signature and place it on the page.</span></a></li>
+    <li><a href="../fill/"><strong>Fill a PDF form</strong><span>Type into the form fields and save the values.</span></a></li>
+    <li><a href="../merge/"><strong>Merge PDFs</strong><span>Combine files and reorder or delete pages.</span></a></li>
+    <li><a href="../compress/"><strong>Compress PDF</strong><span>Shrink the images to make the file smaller.</span></a></li>
+    <li><a href="../split/"><strong>Split PDF</strong><span>One file per page, per range or every N pages.</span></a></li>
+    <li><a href="../extract-pages/"><strong>Extract pages</strong><span>Save the pages you pick as a new PDF.</span></a></li>
+    <li><a href="../rotate/"><strong>Rotate pages</strong><span>Turn pages and save the rotation in the file.</span></a></li>
+    <li><a href="../pdf-to-jpg/"><strong>PDF to JPG</strong><span>Save pages as JPG or PNG images.</span></a></li>
+    <li><a href="../jpg-to-pdf/"><strong>JPG to PDF</strong><span>Put JPG, PNG or WebP images into one PDF.</span></a></li>
+  </ul>
 </div></section>
 </main>
 
 <footer class="foot"><div class="wrap pdf-foot">
   <div>
     <a class="brand" href="../../"><img src="../assets/img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
+    <p>Free Chrome extensions for EPUB, PDF and Markdown files.</p>
     <small>Quire PDF runs on <a href="https://mozilla.github.io/pdf.js/" rel="noopener">PDF.js</a> by Mozilla (Apache 2.0). <a href="../THIRD-PARTY.html">Third-party notices</a>.</small>
   </div>
-  <div><h4>PDF tools</h4><ul>
-    <li><a href="../">All PDF tools</a></li>
+  <div><h4>Edit PDFs</h4><ul>
+    <li><a href="../">PDF editor</a></li>
     <li><a href="../sign/">Sign a PDF</a></li>
     <li><a href="../fill/">Fill a PDF form</a></li>
     <li><a href="../merge/">Merge PDFs</a></li>
-    <li><a href="../annotate/">Annotate a PDF</a></li>
+    <li><a aria-current="page">Annotate a PDF</a></li>
+  </ul></div>
+  <div><h4>Organize and convert</h4><ul>
+    <li><a href="../compress/">Compress PDF</a></li>
+    <li><a href="../split/">Split PDF</a></li>
+    <li><a href="../extract-pages/">Extract pages</a></li>
+    <li><a href="../rotate/">Rotate pages</a></li>
+    <li><a href="../pdf-to-jpg/">PDF to JPG</a></li>
+    <li><a href="../jpg-to-pdf/">JPG to PDF</a></li>
   </ul></div>
   <div><h4>Quire</h4><ul>
     <li><a href="https://chromewebstore.google.com/detail/iofhhdjmlnhmdmnoipmbkloakhakimbk" rel="noopener">Chrome extension</a></li>
