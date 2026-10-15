@@ -58,7 +58,7 @@ p{margin:0 0 1em}
 
 /* Hero */
 .hero{padding:76px 0 64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center}
-.hero h1{font-size:clamp(40px,4.8vw,64px);max-width:13ch;margin-bottom:24px}
+.hero h1{font-size:clamp(36px,3.6vw,52px);max-width:22ch;margin-bottom:24px}
 .hero h1 em{font-style:italic;color:var(--accent)}
 .lede{font-size:20px;color:var(--muted);max-width:34em;margin-bottom:28px}
 .promises{list-style:none;margin:0 0 30px;padding:0;display:flex;flex-wrap:wrap;gap:8px}

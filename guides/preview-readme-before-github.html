@@ -113,7 +113,7 @@
 <header class="top"><div class="wrap">
   <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
   <nav class="nav" aria-label="Main">
-    <a href="../#readers">Readers</a>
+    <a href="../#readers">Extensions</a>
     <a href="./">Guides</a>
     <a href="../privacy.html">Privacy</a>
   </nav>
@@ -124,7 +124,7 @@
   <h1>How to preview a README before pushing it to GitHub</h1>
 <div class="answer">
     <p><strong>Short answer:</strong> only GitHub renders exactly like GitHub. The closest local preview is a tool that sends your file to GitHub’s own Markdown API, such as the <code>gh markdown-preview</code> extension for the GitHub CLI.</p>
-    <p>For a quick read of structure, tables and code, VS Code’s built-in preview or a viewer extension is enough. Then glance at the pushed page for the GitHub-only parts.</p>
+    <p>For a quick read of structure, tables and code, VS Code’s built-in preview or a viewer extension is enough. Then check the GitHub-only parts on the pushed page.</p>
   </div>
   <p class="updated">Updated 15 October 2026. Tool details follow each project’s own documentation.</p>
 
@@ -134,7 +134,7 @@
     <li><strong>Relative links and images.</strong> GitHub <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">rewrites relative links</a> to match the branch you are viewing, so <code>docs/setup.md</code> works on any branch.</li>
     <li><strong>Alerts.</strong> A blockquote starting with <code>[!NOTE]</code>, <code>[!TIP]</code>, <code>[!IMPORTANT]</code>, <code>[!WARNING]</code> or <code>[!CAUTION]</code> becomes a coloured <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">alert</a>. Elsewhere it is usually a plain quote.</li>
     <li><strong>Diagrams.</strong> GitHub draws <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams">Mermaid, GeoJSON, TopoJSON and ASCII STL</a> code blocks.</li>
-    <li><strong>Which README wins.</strong> If there is more than one, GitHub shows the one in <code>.github</code>, then the root, then <code>docs</code>. Content past 500 KiB is cut off.</li>
+    <li><strong>Which README is shown.</strong> If there is more than one, GitHub shows the one in <code>.github</code>, then the root, then <code>docs</code>. Content past 500 KiB is cut off.</li>
   </ul>
 
   <h2>Option 1: GitHub’s renderer, on your machine</h2>
@@ -154,14 +154,14 @@
   <p>Open the README in VS Code and press <kbd>Ctrl</kbd>+<kbd>K</kbd> then <kbd>V</kbd> (<kbd>⌘</kbd><kbd>K</kbd> <kbd>V</kbd> on a Mac) for a <a href="https://code.visualstudio.com/docs/languages/markdown">preview beside the source</a> that updates as you type. It works offline and draws Mermaid diagrams and math. It is VS Code’s renderer, not GitHub’s, so check alerts and relative links on GitHub afterwards.</p>
 
   <h2>Option 4: read it in Chrome with Quire Markdown</h2>
-  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> Choose <strong>Open file</strong> and pick the README, then turn on <strong>Follow file</strong>: the rendered page updates each time you save. The heading outline shows at a glance whether your sections are in the order you meant, and tables, task lists and highlighted code look finished.</p>
+  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> Choose <strong>Open file</strong> and pick the README, then turn on <strong>Follow file</strong>: the rendered page updates each time you save. The heading outline shows whether your sections are in the order you meant, and tables, task lists and highlighted code appear formatted.</p>
 <figure class="shot">
   <picture><source srcset="../img/md-split.webp" type="image/webp"><img src="../img/md-split.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown in the dark theme with the rendered page and Markdown source side by side"></picture>
   <figcaption>Split view in the dark theme: the rendered page beside the Markdown source.</figcaption>
 </figure>
-  <p>It is a reader, so it deliberately skips some of what GitHub does:</p>
+  <p>It is a reader, and it skips some things GitHub does:</p>
   <ul>
-    <li>Images show as “[Image not loaded: …]” with their alt text, which at least confirms each one has alt text.</li>
+    <li>Images show as “[Image not loaded: …]” with their alt text, so you can check that each image has alt text.</li>
     <li>Relative links such as <code>docs/setup.md</code> appear as plain text, because there is no repository to resolve them against.</li>
     <li>Alerts appear as ordinary quotes, footnotes aren’t rendered, and diagrams and math aren’t drawn.</li>
     <li>It opens UTF-8 files up to 2 MB, and it never changes your file.</li>
@@ -172,7 +172,7 @@
     <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
     <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
     <div class="actions">
-      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome (free)</a>
       <a class="link" href="../#markdown">Details and limits</a>
     </div>
   </div>
@@ -198,11 +198,11 @@
 <footer class="foot"><div class="wrap">
   <div>
     <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
-    <p>Focused, private readers for Chrome.</p>
+    <p>Free Chrome extensions for EPUB, PDF and Markdown files.</p>
     <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
   </div>
   <div>
-    <h4>Readers</h4>
+    <h4>Extensions</h4>
     <ul>
       <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
       <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>

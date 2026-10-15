@@ -113,7 +113,7 @@
 <header class="top"><div class="wrap">
   <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
   <nav class="nav" aria-label="Main">
-    <a href="../#readers">Readers</a>
+    <a href="../#readers">Extensions</a>
     <a href="./">Guides</a>
     <a href="../privacy.html">Privacy</a>
   </nav>
@@ -137,7 +137,7 @@
   <p>We found no documented plan file that Codex writes by default. OpenAI’s cookbook article <a href="https://cookbook.openai.com/articles/codex_exec_plans">“Using PLANS.md for multi-hour problem solving”</a> describes a convention instead: an AGENTS.md rule tells Codex to write an “ExecPlan” following a PLANS.md template and keep it up to date as it works. That plan is a Markdown file in your repository.</p>
 
   <h2>Read a plan in Chrome</h2>
-  <p>Long plans are easier to judge formatted: headings become a table of contents, checklists become ticks, and code samples are highlighted.</p>
+  <p>A long plan is easier to judge when it is formatted. Headings become an outline you can jump through, checklists show as ticks, and code samples are highlighted.</p>
 <ol class="steps">
   <li id="step-1"><strong>Make a plan</strong><p>In Claude Code, press <kbd>Shift</kbd>+<kbd>Tab</kbd> until the status bar shows plan mode, or start with <code>claude --permission-mode plan</code>, then describe the change.</p></li>
   <li id="step-2"><strong>Find the file</strong><p>Plans are written to <code>~/.claude/plans</code> unless you set <code>plansDirectory</code>. The newest file there is the current plan.</p></li>
@@ -150,22 +150,22 @@
   <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> It was built for README files, notes and coding-agent plans.</p>
   <ul>
     <li><strong>It can’t change the plan.</strong> It is a viewer only, so you won’t edit a file the agent is still using by mistake.</li>
-    <li><strong>Outline and find.</strong> Jump between phases of a long plan, or search for a file name.</li>
-    <li><strong>Follow file.</strong> Checks the file you opened every two seconds while the tab is visible. Dropped files are snapshots and don’t update, and following stops if you close or reload the viewer.</li>
-    <li><strong>Private.</strong> No account, no upload to us. Up to ten recent documents are kept in your Chrome profile, and you can remove them one by one.</li>
+    <li><strong>Outline and find.</strong> You can jump between phases of a long plan, or search for a file name.</li>
+    <li><strong>Follow file.</strong> It checks the file you opened every two seconds while the tab is visible. Dropped files are snapshots and don’t update, and following stops if you close or reload the viewer.</li>
+    <li><strong>Private.</strong> There is no account, and nothing is uploaded to us. It keeps up to ten recent documents in your Chrome profile, and you can remove them one by one.</li>
   </ul>
 <figure class="shot">
   <picture><source srcset="../img/md-split.webp" type="image/webp"><img src="../img/md-split.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown in the dark theme with the rendered page and Markdown source side by side"></picture>
   <figcaption>Split view in the dark theme: the rendered page beside the Markdown source.</figcaption>
 </figure>
-  <p>Limits: UTF-8 files up to 2 MB; images appear as blocked references; Mermaid diagrams and math are shown as source, not drawn.</p>
+  <p>Limits: it opens UTF-8 files up to 2 MB, images appear as blocked references, and Mermaid diagrams and math are shown as source rather than drawn.</p>
 <aside class="callout" aria-label="Quire Markdown">
   <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
   <div>
     <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
     <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
     <div class="actions">
-      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome (free)</a>
       <a class="link" href="../#markdown">Details and limits</a>
     </div>
   </div>
@@ -191,11 +191,11 @@
 <footer class="foot"><div class="wrap">
   <div>
     <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
-    <p>Focused, private readers for Chrome.</p>
+    <p>Free Chrome extensions for EPUB, PDF and Markdown files.</p>
     <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
   </div>
   <div>
-    <h4>Readers</h4>
+    <h4>Extensions</h4>
     <ul>
       <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
       <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>

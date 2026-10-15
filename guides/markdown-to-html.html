@@ -113,7 +113,7 @@
 <header class="top"><div class="wrap">
   <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
   <nav class="nav" aria-label="Main">
-    <a href="../#readers">Readers</a>
+    <a href="../#readers">Extensions</a>
     <a href="./">Guides</a>
     <a href="../privacy.html">Privacy</a>
   </nav>
@@ -123,18 +123,18 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Quire</a> › <a href="./">Guides</a> › <span aria-current="page">Convert Markdown to HTML</span></nav>
   <h1>How to convert Markdown to HTML</h1>
 <div class="answer">
-    <p><strong>Short answer:</strong> Markdown was designed to be turned into HTML, so most Markdown tools can do it. For control, use <strong>pandoc</strong>. For a quick, readable copy of one file, export from Typora or VS Code, or use a viewer’s HTML download.</p>
+    <p><strong>Short answer:</strong> Markdown was designed to be turned into HTML, so most Markdown tools can do it. For the most control, use <strong>pandoc</strong>. For a quick, readable copy of one file, export from Typora or VS Code, or use a viewer’s HTML download.</p>
   </div>
   <p class="updated">Updated 15 October 2026. pandoc options follow the <a href="https://pandoc.org/MANUAL.html">pandoc manual</a>.</p>
 
-  <h2>pandoc: the flexible way</h2>
+  <h2>pandoc on the command line</h2>
 <ol class="steps">
   <li id="step-1"><strong>Install pandoc</strong><p>Download it from pandoc.org, or install it with your package manager.</p></li>
   <li id="step-2"><strong>Convert to a full page</strong><p>Run <code>pandoc -s notes.md -o notes.html</code>. The <code>-s</code> (standalone) flag adds the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>; without it you get a fragment to paste into another page.</p></li>
   <li id="step-3"><strong>Match GitHub’s dialect if needed</strong><p>Add <code>-f gfm</code> to read the file as GitHub-Flavored Markdown, so tables and task lists are read the way GitHub reads them.</p></li>
   <li id="step-4"><strong>Make it self-contained</strong><p>Add <code>--embed-resources</code> to put stylesheets and images inside the HTML file, so it works when sent on its own.</p></li>
 </ol>
-  <p>Useful extras: <code>--toc</code> adds a table of contents (standalone output only), <code>--css style.css</code> links your own stylesheet, and <code>--metadata title="My notes"</code> sets the page title. pandoc can also go the other way, from HTML to Markdown.</p>
+  <p>Other useful options: <code>--toc</code> adds a table of contents (standalone output only), <code>--css style.css</code> links your own stylesheet, and <code>--metadata title="My notes"</code> sets the page title. pandoc can also go the other way, from HTML to Markdown.</p>
 
   <h2>Typora</h2>
   <p><a href="https://support.typora.io/Export/">Typora</a> has <strong>File › Export › HTML</strong>, which keeps its theme, and <strong>HTML (without styles)</strong>, which gives you clean markup to style yourself.</p>
@@ -148,12 +148,12 @@
     <li><strong>Open the file</strong><p>Choose <strong>Open file</strong>, drop a .md file onto the viewer, or paste Markdown.</p></li>
     <li><strong>Download</strong><p>Open the <strong>More</strong> menu and choose <strong>Download as HTML</strong>. The file takes the document’s name, ending in .html.</p></li>
   </ol>
-  <p>What you get is one self-contained file with simple built-in styling: a readable column, bordered tables, shaded code blocks and linkable headings. It has no scripts and loads nothing from other websites, so it opens the same way anywhere. Things to know:</p>
+  <p>The download is one self-contained file with simple built-in styling: a readable column, bordered tables, shaded code blocks and linkable headings. It has no scripts and loads nothing from other websites, so it opens the same way anywhere. Some details:</p>
   <ul>
     <li>Code keeps its shading but not its syntax colours.</li>
     <li>Images are not included; they appear as “[Image not loaded: …]” labels. The file also tells the browser not to load any images.</li>
     <li>Relative links such as <code>docs/setup.md</code> become plain text; full <code>https://</code> links stay clickable.</li>
-    <li>Scripts, forms and embedded content in the Markdown are removed, which makes it a safe copy of an untrusted file.</li>
+    <li>Scripts, forms and embedded content in the Markdown are removed, so the copy is safe to open even if the original came from someone you don’t trust.</li>
   </ul>
 <aside class="callout" aria-label="Quire Markdown">
   <img src="../img/logo-markdown.png" alt="Quire Markdown logo" width="48" height="48">
@@ -161,7 +161,7 @@
     <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
     <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
     <div class="actions">
-      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome (free)</a>
       <a class="link" href="../#markdown">Details and limits</a>
     </div>
   </div>
@@ -194,11 +194,11 @@
 <footer class="foot"><div class="wrap">
   <div>
     <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
-    <p>Focused, private readers for Chrome.</p>
+    <p>Free Chrome extensions for EPUB, PDF and Markdown files.</p>
     <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
   </div>
   <div>
-    <h4>Readers</h4>
+    <h4>Extensions</h4>
     <ul>
       <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
       <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>

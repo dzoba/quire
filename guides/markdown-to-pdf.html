@@ -113,7 +113,7 @@
 <header class="top"><div class="wrap">
   <a class="brand" href="../" aria-label="Quire home"><img src="../img/quire-mark.svg" alt="" width="38" height="38">Quire</a>
   <nav class="nav" aria-label="Main">
-    <a href="../#readers">Readers</a>
+    <a href="../#readers">Extensions</a>
     <a href="./">Guides</a>
     <a href="../privacy.html">Privacy</a>
   </nav>
@@ -128,15 +128,15 @@
   <p class="updated">Updated 15 October 2026. Third-party steps follow each tool’s documentation.</p>
 
   <h2>From Chrome</h2>
-  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> Its print layout is made for paper.</p>
+  <p><strong>Quire Markdown is our extension, free on the <a href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Chrome Web Store</a>.</strong> It has a print layout designed for paper.</p>
 <ol class="steps">
   <li id="step-1"><strong>Open the file formatted</strong><p>Open the .md file in Quire Markdown with <strong>Open file</strong>, or drop it onto the viewer.</p></li>
   <li id="step-2"><strong>Choose Print</strong><p>Open the viewer’s <strong>More</strong> menu and choose <strong>Print / save as PDF</strong>.</p></li>
   <li id="step-3"><strong>Pick Save as PDF</strong><p>In Chrome’s print dialog, set <strong>Destination</strong> to <strong>Save as PDF</strong>, or choose a printer.</p></li>
   <li id="step-4"><strong>Save</strong><p>Click <strong>Save</strong> (or <strong>Print</strong>) and choose where to put the file.</p></li>
 </ol>
-  <p>What the printout includes: only the rendered document. The toolbar, outline and copy buttons are left out, long code lines wrap instead of being cut off, tables use the full page width, and level-2 headings aren’t left stranded at the bottom of a page.</p>
-  <p>What it doesn’t: images in the document aren’t loaded, so they print as “[Image not loaded: …]” labels. Mermaid diagrams and math print as their source. If you need those, use one of the tools below.</p>
+  <p>The printout includes only the rendered document. The toolbar, outline and copy buttons are left out, long code lines wrap instead of being cut off, tables use the full page width, and level-2 headings aren’t left stranded at the bottom of a page.</p>
+  <p>Images in the document aren’t loaded, so they print as “[Image not loaded: …]” labels. Mermaid diagrams and math print as their source. If you need those, use one of the tools below.</p>
 <figure class="shot">
   <picture><source srcset="../img/md-reader.webp" type="image/webp"><img src="../img/md-reader.jpg" width="960" height="540" loading="lazy" alt="Quire Markdown showing a rendered document with a heading outline on the left"></picture>
   <figcaption>Quire Markdown with its outline of headings.</figcaption>
@@ -147,14 +147,14 @@
     <b>Quire Markdown – Viewer</b><span class="status">On the Chrome Web Store</span>
     <p>A Markdown viewer for Chrome with a heading outline, highlighted code, source and split views, and refresh for local files. Free, with no account.</p>
     <div class="actions">
-      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome – free</a>
+      <a class="btn" href="https://chromewebstore.google.com/detail/hghkgbeaccjnfdihghilbgjgpgmeaafh">Add to Chrome (free)</a>
       <a class="link" href="../#markdown">Details and limits</a>
     </div>
   </div>
 </aside>
 
   <h2>VS Code: the Markdown PDF extension</h2>
-  <p>VS Code has no PDF export built in. The popular <a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf">Markdown PDF</a> extension adds commands such as <strong>Markdown PDF: Export (pdf)</strong> to the Command Palette and the right-click menu. It also exports HTML, PNG and JPEG.</p>
+  <p>VS Code has no PDF export built in. The <a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf">Markdown PDF</a> extension adds commands such as <strong>Markdown PDF: Export (pdf)</strong> to the Command Palette and the right-click menu. It also exports HTML, PNG and JPEG.</p>
   <ul>
     <li>It uses an installed Chrome, Edge or Chromium to make the PDF, and downloads a Chromium build on first use if it finds none.</li>
     <li>It draws Mermaid diagrams. By default it loads the Mermaid library from a CDN, so that part needs a connection.</li>
@@ -166,7 +166,7 @@
   <h2>pandoc</h2>
   <p><a href="https://pandoc.org/MANUAL.html">pandoc</a> is a free command-line converter. The simplest command is:</p>
   <p><code>pandoc notes.md -o notes.pdf</code></p>
-  <p>By default pandoc makes PDFs through LaTeX, which must be installed separately and produces a typeset, academic look. To use HTML and CSS instead, name an HTML-based engine, for example <code>pandoc notes.md --pdf-engine=weasyprint -o notes.pdf</code> with WeasyPrint installed. pandoc suits scripts and batches; for one file, the options above are quicker.</p>
+  <p>By default pandoc makes PDFs through LaTeX, which must be installed separately and produces a typeset, academic look. To use HTML and CSS instead, name an HTML-based engine, for example <code>pandoc notes.md --pdf-engine=weasyprint -o notes.pdf</code> with WeasyPrint installed. pandoc suits scripts and batch jobs. For a single file, the options above are quicker.</p>
 
   <h2>Questions</h2>
   <div class="faq-list">
@@ -188,11 +188,11 @@
 <footer class="foot"><div class="wrap">
   <div>
     <a class="brand" href="../"><img src="../img/quire-mark.svg" alt="" width="30" height="30">Quire</a>
-    <p>Focused, private readers for Chrome.</p>
+    <p>Free Chrome extensions for EPUB, PDF and Markdown files.</p>
     <small>Chrome is a trademark of Google LLC. Quire is not affiliated with Google.</small>
   </div>
   <div>
-    <h4>Readers</h4>
+    <h4>Extensions</h4>
     <ul>
       <li><a href="https://dzoba.github.io/quire-epub-reader/">EPUB Reader</a></li>
       <li><a href="https://dzoba.github.io/quire-pdf/">PDF – Reader &amp; Editor</a></li>
